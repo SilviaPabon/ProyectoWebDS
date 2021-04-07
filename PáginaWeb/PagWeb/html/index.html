@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--ayuda a los navegadores para saber que version es -->
+<html lang="en">
+
+<head>
+    <!--No se van a ver en la pagina web-->
+    <title> Programa'Study</title>
+    <meta charset="utf-8">
+    <!--para que permita la ñ y los asentos-->
+    <meta name="viewport" content "width=device-width, initial-scale=1">
+    <!--para redimensionar la web en movil-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!--estructura de la web-->
+        <nav class="navbar navbar-light bg-light">
+
+            <div class="container-fluid">
+                <a class="navbar-brand">
+                    <h3>Programa'Study</h3>
+                </a>
+
+                <form class="d-flex ">
+                    <input class="form-control me-2 " type="Buscar " placeholder="Palabra clave " aria-label="Buscar ">
+                    <button class="btn btn-outline-secondary " type="submit ">Buscar </button>
+
+                </form>
+
+
+            </div>
+
+        </nav>
+
+        <div class="cover d-flex justify-content-center align-items-center flex-column ">
+            <h1>
+                Programa'Study
+            </h1>
+            <p>
+                Web para mejorar tu programacion
+            </p>
+            <button class="btn btn-secondary " onclick="window.location.href='acercade.html'">Empieza tu aprendizaje      
+            </button>
+        </div>
+
+
+    </header>
+
+    <section>
+        <div class="container mt-5 mb-5 mt-2   ">
+            <div class="row justify-content-center ">
+
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2 ">
+                    <div class="card ">
+                        <div tittle="chica apuntando lo que esta en el pc " class="cover cover-small " style="background-image: url(imagenes/Python.jpg); "></div>
+
+                        <div class="card-body ">
+                            <h5 class="card-title ">Presentación</h5>
+                            <p class="card-text ">Presentación de teoría.</p>
+                            <a href="# " class="btn btn-secondary" onclick="window.location.href='presentacion.html'">Empezar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2 ">
+                    <div class="card ">
+                        <div tittle="dos laptos y un libro con apuntes " class="cover cover-small " style="background-image: url(imagenes/java.jpg); "></div>
+
+                        <div class="card-body ">
+                            <h5 class="card-title "> Módulo Ejemplo</h5>
+                            <p class="card-text ">Presentación estructuras en Java, Python, C++.</p>
+                            <a href="# " class="btn btn-secondary ">Evalua ya</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2 ">
+                    <div class="card ">
+                        <div title="dos estudiantes en un pc " class="cover cover-small " style="background-image: url(imagenes/codi.jpg); "></div>
+
+                        <div class="card-body ">
+                            <h5 class="card-title ">Módulo Transformaciones</h5>
+                            <p class="card-text ">. Proceso de transformaciones de codigo.</p>
+                            <a href="# " class="btn btn-secondary ">Más informacion</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container mt-5 mb-5 ">
+            <div class="row ">
+                <div class="col-12 col-sm-6 col-lg-5 ">
+                    <img src="imagenes/SelfieDoodle.svg " />
+                </div>
+
+
+                <div class="col-12 col-sm-6 ">
+                    <h2>
+                        ¡Aprende con nosotros!
+                    </h2>
+                    <p>
+                        Haz tu curso online sobre el area de programacion que quieras fortalecer o acercate a nuestra academia más cercana
+                    </p>
+                    <a href="#mapa">Ir al Mapa</a>
+
+                </div>
+            </div>
+
+
+
+
+
+            <form action="# ">
+                <div class="d-flex ">
+                    <label for="email ">Correo electronico </label>
+
+                    <div class="form-group flex-fill ">
+                        <input type="email " id="email " class="form-control " />
+                    </div>
+                    <button type="submit " class="btn btn-secondary ">Enviar</button>
+                </div>
+            </form>
+
+        </div>
+
+    </section>
+
+    <section>
+        <!--Tira de productos-->
+        <div class="container mt-5 mb-5 ">
+            <div class="product-stripe ">
+                <div class="stripe-container ">
+                    <div class="card ">
+                        <div title="Un teclado sobre una mesa " class="cover cover-small " style="background-image: url(imagenes/prime.jpg); "></div>
+
+                        <div class="card-body ">
+                            <h5 class="card-title ">Metodos de aprendizaje</h5>
+                            <span class="badge bg-secondary text-dark ">Ver más</span>
+                        </div>
+                    </div>
+                    <div class="card ">
+                        <div title="una persona exponiendo a un grupo " class="cover cover-small " style="background-image: url(imagenes/secu.jpg); "></div>
+
+                        <div class="card-body ">
+                            <h5 class="card-title ">Nuestra academia</h5>
+                            <span class="badge bg-secondary text-dark ">Ver más</span>
+
+                        </div>
+                    </div>
+                    <div class="card ">
+                        <div title="dos estudiantes en un pc cada uno " class="cover cover-small " style="background-image: url(imagenes/terc.jpg); "></div>
+
+                        <div class="card-body ">
+                            <h5 class="card-title ">Aprende de manera virtual</h5>
+                            <span class="badge bg-secondary text-dark ">Ver más</span>
+
+                        </div>
+                    </div>
+                    <div class="card ">
+                        <div title="Una maestra con mascarilla " class="cover cover-small " style="background-image: url(imagenes/cuart.jpg); "></div>
+
+                        <div class="card-body ">
+                            <h5 class="card-title ">El Covid en nuestra compañia</h5>
+                            <span class="badge bg-secondary text-dark ">Ver más</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <section>
+        <div class="container mt-5 mb-5 text-center animate__backInDown " id="mapa">
+            <h4>
+                ¡Aquí nos encontramos!
+            </h4>
+            <p>
+                Autopista Piedecuesta Kilómetro 7, Floridablanca, Santander
+            </p>
+            <div class="responsive-iframe ">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.754207410975!2d-73.07439268620118!3d7.038147318921274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6840b36653b9c5%3A0x4dcdbc55842151df!2sUniversidad%20Pontificia%20Bolivariana%20Seccional%20Bucaramanga!5e0!3m2!1ses!2sco!4v1613582299807!5m2!1ses!2sco "
+                    </div>
+                width="600 " height="450 " frameborder="0 " style="border:0; " allowfullscreen=" " aria-hidden="false " tabindex="0 "></iframe>
+            </div>
+
+    </section>
+
+</body>
+
+</html>
