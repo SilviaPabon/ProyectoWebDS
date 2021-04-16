@@ -12,10 +12,28 @@ if __name__=='__main__':
     print("Imprimir lista, probar vacío, obtener cola")
     print(nueva.isEmpty())
     print(nueva.getTail())
-    print(nueva.Show())
+    print(nueva.show())
 
     nueva2 = CircuList()
     print(nueva2.getTail())
+
+    print("Buscar")
+    print(nueva.search(4))
+    nueva.instertHead("inicio")
+    print(nueva.show())
+
+    nueva2.instertHead(1)
+    nueva2.add(2)
+    nueva2.add(3)
+    nueva2.add(4)
+    nueva2.insert(4, "k")
+    print(nueva2.show())
+    print(nueva2.__contains__("k"))
+
+    nueva2.removen("k")
+    print(nueva2.show())
+
+
 
 
 
@@ -34,23 +52,23 @@ public Object getHead(); //readyc
 
 public Object getTail(); //readyc
 
-public ListNode search(Object object); 
+public ListNode search(Object object); //readyc
 
 public boolean add(Object object); //readyc
 
-public boolean insert(ListNode node, Object object); 
+public boolean insert(ListNode node, Object object); //readyc
 
-public boolean insert(Object ob, Object object); 
+public boolean insert(Object ob, Object object); //readyc
 
-public boolean insertHead(Object ob, Object object); 
+public boolean insertHead(Object ob, Object object); //readyc
 
 public boolean insertTail(Object ob, Object object); //readyc
 
-public boolean remove(ListNode node); 
+public boolean remove(ListNode node); //readyc
 
-public boolean remove(Object object);
+public boolean remove(Object object); //readyc
 
-public boolean contains(Object object); 
+public boolean contains(Object object); //readyc
 
 public Iterator<ListNode> iterator(); 
 

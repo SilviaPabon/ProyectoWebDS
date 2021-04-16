@@ -43,8 +43,6 @@ if __name__=='__main__':
 
     nueva.insert(4, 33)
     print(nueva)
-    nueva3 = List()
-    nueva3.isEmpty()
 
 
 
