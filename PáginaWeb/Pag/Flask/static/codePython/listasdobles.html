@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<!--ayuda a los navegadores para saber que version es -->
+<html lang="en">
+
+<head>
+    <!--No se van a ver en la pagina web-->
+    <title> Programa'Study</title>
+    <meta charset="utf-8">
+    <!--para que permita la ñ y los asentos-->
+    <meta name="viewport" content "width=device-width, initial-scale=1">
+    <!--para redimensionar la web en movil-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="styleeP.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&skin=doxy" defer="defer"></script>
+</head>
+
+<body>
+    <header>
+        <!--estructura de la web-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">LVaED</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="presentacion.html">Presentacion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Transformaciones</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cover d-flex justify-content-center align-items-center flex-column ">
+            <h1>
+                LISTAS PYTHON
+            </h1>
+            <p>
+                Web para mejorar tu programacion
+            </p>
+            <button class="btn btn-secondary " onclick="window.location.href='../Ejemplos.html'">Empieza tu aprendizaje
+            </button>
+        </div>
+
+
+    </header>
+
+    <div class="texto">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination" ALIGN=CENTER>
+
+                <li class="page-item"><a class="page-link" href="listaenlazada.html">1</a></li>
+                <li class="page-item"><a class="page-link" href="listasdobles.html">2</a></li>
+                <li class="page-item"><a class="page-link" href="listasCirculares.html">3</a></li>
+                <li class="page-item"><a class="page-link" href="circularesDobles.html">4</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="texto">
+
+        <h3>Listas Doblemente Enlazadas</h3>
+
+        <b>Clase DubleList</b>
+
+
+        <pre class="prettyprint">
+            <code id="language-python">
+
+                from edu.doublelistnode import DoubleListNode
+
+                class DoubleList:
+                
+                    def __init__(self):
+                        self.clear()
+                
+                    def clear(self):
+                        self.head = None
+                        self.tail = None
+                        self.inode = None
+                        self.size = 0
+                
+                    def isEmpty(self):
+                        return self.head == None
+                
+                    def getSize(self):
+                        return self.size
+                
+                    def getHead(self):
+                        return self.head
+                
+                    def getTail(self):
+                        return self.tail
+                
+                    def search(self, object):
+                        self.inode = self.head
+                        while self.inode != None:
+                            if self.inode.object == object:
+                                return self.inode
+                            self.inode = self.inode.next
+                        return None
+                
+                    # add o append?
+                    def add(self, object):
+                        return self.instertTail(object)
+                
+                    def instertTail(self, object):
+                        try:
+                            self.inode = DoubleListNode(object, None, None)
+                            if self.getSize() == 0:
+                                self.tail = self.inode
+                                self.head = self.tail
+                            else:
+                                self.tail.next = self.inode
+                                self.inode.previous = self.tail
+                                self.tail = self.inode
+                                self.tail.next = None
+                            self.size += 1
+                            return True
+                        except:
+                            print("Exception")
+                            return False
+                
+                    def instertHead(self, object):
+                        try:
+                            self.inode = DoubleListNode(object)
+                            if self.getSize() == 0:
+                                self.head = self.inode
+                            else:
+                                self.inode.next = self.head
+                                self.head.previous = self.inode
+                                self.head = self.inode
+                            self.size += 1
+                            return True
+                        except:
+                            print("Exception")
+                            return False
+                
+                    def insertn(self, node, object):
+                        try:
+                            if node != None:
+                                if node.next == None:
+                                    self.add(object)
+                                else:
+                                    newNode = DoubleListNode(object)
+                                    newNode.next = node.next
+                                    node.next = newNode
+                                    newNode.previous = node
+                                    if newNode.next != None:
+                                        newNode.next.previous = newNode
+                                    self.size += 1
+                                return True
+                            else:
+                                return False
+                        except:
+                            print("Exception")
+                            return False
+                
+                    def insert(self, ob, object):
+                        try:
+                            if ob != None:
+                                node = self.search(ob)
+                                if node != None:
+                                    return self.insertn(node, object)
+                                else:
+                                    return False
+                            else:
+                                return False
+                        except:
+                            print("Exception")
+                            return False
+                
+                    def removen(self, node):
+                        if self.getSize() > 0:
+                            nodeDL = self.search(node.object)
+                            if nodeDL != None:
+                                if self.head == nodeDL:
+                                    self.head = nodeDL.next
+                                if nodeDL.next != None:
+                                    nodeDL.next.previous = nodeDL.previous
+                                if nodeDL.previous != None:
+                                    nodeDL.previous.next = nodeDL.next
+                                self.size -= 1
+                                return True
+                            else:
+                                return -1
+                        else:
+                            return False
+                
+                    def remove(self, object):
+                        if self.getSize() > 0:
+                            if object != None:
+                                node = self.search(object)
+                                if node != None:
+                                    return self.removen(node)
+                                else:
+                                    return False
+                            else:
+                                return False
+                        else:
+                            return False
+                
+                    def __contains__(self, object):
+                        self.inode = self.head
+                        while self.inode != None:
+                            if self.inode.object == object:
+                                return True
+                            self.inode = self.inode.next
+                        return False
+                
+                    def __str__(self):
+                        return str("DoubleList{") + str("head=") + str(self.head) + str(", tail=") + str(self.tail) + str(", size=") + str(
+                            self.size) + str("}")
+                
+                    def Show(self):
+                        impresion = "["
+                        inode = self.head
+                        while inode != None:
+                            impresion += str(inode.object) + ","
+                            inode = inode.next
+                        impresion += "]"
+                        return impresion
+                
+                    def Show_Backwards(self):
+                        impresion = "["
+                        inode = self.tail
+                        while inode != None:
+                            impresion += str(inode.object) + ","
+                            inode = inode.previous
+                        impresion += "]"
+                        return impresion
+            </code>
+        </pre>
+
+    </section>
+
+    <section class="texto">
+
+        <b>Clase DoubleListNode</b>
+
+
+        <pre class="prettyprint">
+            <code id="language-python">
+
+                class DoubleListNode:
+
+                #constructor
+                def __init__(self, object=None, next=None, previous=None):
+                    self.object = object
+                    self.next = next
+                    self.previous = previous
+                    
+                def is_equals(self, object):
+                    if self.object.str() == object.str():
+                        return True
+                    else:
+                        return False
+            
+                def __eq__(self, do_listnode):
+                    if self.object == do_listnode:
+                        return True
+                    else:
+                        return False
+            
+                def __str__(self):
+                    return str("ListNode{") + str("object=") + str(self.object) + str(", next=") + str(self.next) + str("}")
+
+            </code>
+        </pre>
+
+    </section>
+
+    <section class="texto">
+
+        <b>Clase Main</b>
+
+
+        <pre class="prettyprint">
+            <code id="language-python">
+
+                from edu.doublelistnode import DoubleListNode
+                from edu.DoubleList import DoubleList
+                
+                if __name__ == '__main__':
+                
+                    dNueva = DoubleList()
+                    print(dNueva.isEmpty())
+                    print(dNueva.getSize())
+                    dNueva.add("o1")
+                    dNueva.add("o2")
+                    dNueva.add("o3")
+                    print(dNueva.isEmpty())
+                    print(dNueva.getSize())
+                    print(dNueva.isEmpty())
+                    print(dNueva.instertHead("o0"))
+                    print(dNueva.getTail().object)
+                    print(dNueva.Show())
+                    print(dNueva.Show_Backwards())
+                    print(dNueva.getSize())
+                    print("Buscar")
+                    print(dNueva.search("o0"))
+                    dNueva.insert("o3", "cabeza")
+                    print(dNueva.Show())
+                    print(dNueva.Show_Backwards())
+                    print("Eliminar")
+                    dNueva.removen(dNueva.search("o0"))
+                    print(dNueva.Show())
+                    print("Contains")
+                    dNueva.add("final")
+                    print(dNueva.__contains__("final"))
+                
+                
+                """    
+                public boolean isEmpty(); //readyd
+                public int getSize(); //readyd
+                public void clear(); //readyd
+                public Object getHead(); //readyd
+                public Object getTail(); //readyd
+                public ListNode search(Object object); //readyd
+                public boolean add(Object object); //readyd
+                public boolean insert(ListNode node, Object object); //readyd
+                public boolean insert(Object ob, Object object); //readyd
+                public boolean insertHead(Object ob, Object object); //ready
+                public boolean insertTail(Object ob, Object object); //readyd
+                public boolean remove(ListNode node); //readyd
+                public boolean remove(Object object); //readyd
+                public boolean contains(Object object); //readyd
+                public Iterator<ListNode> iterator(); 
+                public Object[] toArray(); 
+                public Object[] toArray(Object[] object); 
+                public Object getBeforeTo();
+                public ListNode getBeforeTo(ListNode node);
+                public Object getNextTo();
+                public Object getNextTo(ListNode node);
+                public List subList(ListNode from, ListNode to);
+                public List sortList(); 
+                """
+            </code>
+        </pre>
+
+    </section>
+    <br><br>
+</body>

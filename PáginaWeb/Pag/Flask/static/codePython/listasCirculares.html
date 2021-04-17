@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!--ayuda a los navegadores para saber que version es -->
+<html lang="en">
+
+<head>
+    <!--No se van a ver en la pagina web-->
+    <title> Programa'Study</title>
+    <meta charset="utf-8">
+    <!--para que permita la ñ y los asentos-->
+    <meta name="viewport" content "width=device-width, initial-scale=1">
+    <!--para redimensionar la web en movil-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="styleeP.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&skin=doxy" defer="defer"></script>
+</head>
+
+<body>
+    <header>
+        <!--estructura de la web-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">LVaED</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="presentacion.html">Presentacion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Transformaciones</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cover d-flex justify-content-center align-items-center flex-column ">
+            <h1>
+                LISTAS PYTHON
+            </h1>
+            <p>
+                Web para mejorar tu programacion
+            </p>
+            <button class="btn btn-secondary " onclick="window.location.href='../Ejemplos.html'">Empieza tu aprendizaje
+            </button>
+        </div>
+
+
+    </header>
+
+    <div class="texto">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination" ALIGN=CENTER>
+
+                <li class="page-item"><a class="page-link" href="listaenlazada.html">1</a></li>
+                <li class="page-item"><a class="page-link" href="listasdobles.html">2</a></li>
+                <li class="page-item"><a class="page-link" href="listasCirculares.html">3</a></li>
+                <li class="page-item"><a class="page-link" href="circularesDobles.html">4</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="texto">
+
+        <h3>Listas Circulares</h3>
+
+        <b>Clase ListNode</b>
+
+
+        <pre class="prettyprint">
+            <code id="language-python">
+
+                class CircuListNode:
+
+                def __init__(self, object=None, next=None):
+                    self.object = object
+                    self.next = next
+                    
+                def is_equals(self, object):
+                    if self.object.str() == object.str():
+                        return True
+                    else:
+                        return False
+            
+                def __eq__(self, ListNode):
+                    if self.object == ListNode:
+                        return True
+                    else:
+                        return False
+            
+                def __str__(self):
+                    return str("ListNode{") + str("object=") + str(self.object) + str("}")
+            </code>
+        </pre>
+
+    </section>
+
+    <section class="texto">
+
+
+
+        <b>Clase List</b>
+
+
+        <pre class="prettyprint">
+            <code id="language-python">
+
+                from edu.CircuListNode import CircuListNode
+
+                class CircuList:
+                
+                    def __init__(self):
+                        self.clear()
+                
+                    def clear(self):
+                        self.head = None
+                        self.tail = None
+                        self.inode = None
+                        self.size = 0
+                
+                    def isEmpty(self):
+                        return self.head == None
+                
+                    def getSize(self):
+                        return self.size
+                
+                    def getHead(self):
+                        if self.isEmpty() == True:
+                            print("-1")
+                            return False
+                        else:
+                            self.inode = self.head
+                            return self.inode.object
+                
+                    def getTail(self):
+                        if self.isEmpty() == True:
+                            print("-1")
+                            return False
+                        else:
+                            self.inode = self.head
+                            while self.inode != self.tail:
+                                self.inode = self.inode.next
+                            return self.tail.object
+                
+                    def search(self, object):
+                        self.inode = self.head
+                        while True:
+                            if self.inode.object == object:
+                                return self.inode
+                            self.inode = self.inode.next
+                            if self.inode == self.head:
+                                break
+                        return None
+                
+                    def add(self, object):
+                        return self.instertTail(object)
+                
+                    def instertTail(self, object):
+                        try:
+                            self.inode = CircuListNode(object)
+                            if self.isEmpty() == True:
+                                self.head = self.inode
+                                self.tail = self.head
+                            else:
+                                self.tail.next = self.inode
+                                self.tail = self.inode
+                            self.tail.next = self.head
+                            self.size += 1
+                            return True
+                        except:
+                            print("Exception")
+                            return False
+                
+                
+                    def instertHead(self, object):
+                        try:
+                            self.inode = CircuListNode(object)
+                            if self.getSize() == 0:
+                                self.head = self.inode
+                                self.tail = self.head
+                            else:
+                                self.head = CircuListNode(object, self.head)
+                            self.tail.next = self.head
+                            self.size += 1
+                            return True
+                        except:
+                            print("Exception")
+                            return False
+                
+                    def insertn(self, node, object):
+                        try:
+                            if node.next == None:
+                                self.add(object)
+                            elif node.next == self.head:
+                                self.add(object)
+                            else:
+                                newNode = CircuListNode(object)
+                                newNode.next = node.next
+                                node.next = newNode
+                                self.size += 1
+                            return True
+                        except:
+                            print("Exception")
+                            return False
+                
+                    def insert(self, ob, object):
+                        try:
+                            if ob != None:
+                                node = self.search(ob)
+                                if node != None:
+                                    return self.insertn(node, object)
+                                else:
+                                    return False
+                            else:
+                                return False
+                        except:
+                            print("Exception")
+                            return False
+                
+                
+                    def removen(self, node):
+                        if self.getSize() > 0:
+                            if node != None:
+                                if self.head == self.tail and self.head == node:
+                                    self.clear()
+                                    self.size -= 1
+                                    return True
+                                elif node == self.head:
+                                    self.head = self.head.next
+                                    self.size -= 1
+                                    return True
+                                else:
+                                    prev = self.head
+                                    self.inode = self.head.next
+                                    while self.inode != None and self.inode != node:
+                                        prev = prev.next
+                                        self.inode = self.inode.next
+                                    if self.inode != None:
+                                        prev.next = self.inode.next
+                                        if self.inode == self.tail:
+                                            self.tail = prev
+                                    self.size -= 1
+                                    return True
+                            else:
+                                return False
+                        else:
+                            return False
+                
+                    def remove(self, object):
+                        if self.getSize() > 0:
+                            if object != None:
+                                node = self.search(object)
+                                if node != None:
+                                    return self.removen(node)
+                                else:
+                                    return False
+                            else:
+                                return False
+                        else:
+                            return False
+                
+                    def __contains__(self, object):
+                        self.inode = self.head
+                        while True:
+                            if self.inode.object == object:
+                                return True
+                            self.inode = self.inode.next
+                            if self.inode == self.head:
+                                break
+                        return False
+                
+                    def __str__(self):
+                        return str("List{") + str("head=") + str(self.head) + str(", tail=") + str(self.tail) + str(", size=") + str(
+                            self.size) + str("}")
+                
+                    def show(self):
+                        if self.isEmpty() == True:
+                            print("-1")
+                        resultado = ""
+                        self.inode = self.head
+                        while self.inode != self.tail:
+                            resultado += str(self.inode.object) + "->"
+                            self.inode = self.inode.next
+                        resultado += str(self.tail.object) + "->" + str(self.head.object)
+                        return resultado
+                
+        </pre>
+    </section>
+
+    <section class="texto">
+
+        <b>Clase Main</b>
+
+        <pre class="prettyprint">
+            <code id="language-python">
+
+                from edu.CircuList import CircuList
+                from edu.CircuListNode import CircuListNode
+                
+                if __name__=='__main__':
+                    nueva = CircuList()
+                    print("Probar, vacío y agregar")
+                    print(nueva.isEmpty())
+                    print(nueva.add(1))
+                    nueva.add(2)
+                    nueva.add(3)
+                
+                    print("Imprimir lista, probar vacío, obtener cola")
+                    print(nueva.isEmpty())
+                    print(nueva.getTail())
+                    print(nueva.show())
+                
+                    nueva2 = CircuList()
+                    print(nueva2.getTail())
+                
+                    print("Buscar")
+                    print(nueva.search(4))
+                    nueva.instertHead("inicio")
+                    print(nueva.show())
+                
+                    nueva2.instertHead(1)
+                    nueva2.add(2)
+                    nueva2.add(3)
+                    nueva2.add(4)
+                    nueva2.insert(4, "k")
+                    print(nueva2.show())
+                    print(nueva2.__contains__("k"))
+                
+                    nueva2.removen("k")
+                    print(nueva2.show())
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                """    
+                public boolean isEmpty(); //readyc
+                public int getSize(); //readyc
+                public void clear(); //readyc
+                public Object getHead(); //readyc
+                public Object getTail(); //readyc
+                public ListNode search(Object object); //readyc
+                public boolean add(Object object); //readyc
+                public boolean insert(ListNode node, Object object); //readyc
+                public boolean insert(Object ob, Object object); //readyc
+                public boolean insertHead(Object ob, Object object); //readyc
+                public boolean insertTail(Object ob, Object object); //readyc
+                public boolean remove(ListNode node); //readyc
+                public boolean remove(Object object); //readyc
+                public boolean contains(Object object); //readyc
+                public Iterator<ListNode> iterator(); 
+                public Object[] toArray(); 
+                public Object[] toArray(Object[] object); 
+                public Object getBeforeTo();
+                public ListNode getBeforeTo(ListNode node);
+                public Object getNextTo();
+                public Object getNextTo(ListNode node);
+                public List subList(ListNode from, ListNode to);
+                public List sortList(); 
+                """
+        </pre>
+    </section>
+    <br><br>
+
+</body>

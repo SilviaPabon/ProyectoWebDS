@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--ayuda a los navegadores para saber que version es -->
+<html lang="en">
+
+<head>
+    <!--No se van a ver en la pagina web-->
+    <title> LVaDE</title>
+    <meta charset="utf-8">
+    <!--para que permita la ñ y los asentos-->
+    <meta name="viewport" content "width=device-width, initial-scale=1">
+    <!--para redimensionar la web en movil-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!--estructura de la web-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">LVaED</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="presentacion.html">Presentacion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Transformaciones</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cover d-flex justify-content-center align-items-center flex-column ">
+            <h1>
+                LVaED
+            </h1>
+            <p>
+                Web para promover el aprendizaje en Estructuras de Datos
+            </p>
+            <button class="btn btn-secondary " onclick="window.location.href='acercade.html'">Empieza tu aprendizaje      
+            </button>
+        </div>
+
+
+    </header>
+
+    <section>
+        <div class="container mt-5 mb-5 mt-2   ">
+            <div class="row justify-content-center ">
+
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2 ">
+                    <div class="card ">
+                        <div tittle="chica apuntando lo que esta en el pc " class="cover cover-small " style="background-image: url(imagenes/presen.jpg); "></div>
+
+                        <div class="card-body ">
+                            <h5 class="card-title ">Módulo Presentación</h5>
+                            <p class="card-text ">Presentación de teoría</p>
+                            <a href="# " class="btn btn-secondary" onclick="window.location.href='presentacion.html'">Empezar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2 ">
+                    <div class="card ">
+                        <div title="dos laptos y un libro con apuntes " class="cover cover-small " style="background-image: url(imagenes/ejem.jpg); "></div>
+
+                        <div class="card-body ">
+                            <h5 class="card-title "> Módulo Ejemplos</h5>
+                            <p class="card-text ">Presentación estructuras en Java, Python, C++</p>
+                            <a href="# " class="btn btn-secondary " onclick="window.location.href='Ejemplos.html'">Empezar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2 ">
+                    <div class="card ">
+                        <div title="dos estudiantes en un pc " class="cover cover-small " style="background-image: url(imagenes/trans.jpg); "></div>
+
+                        <div class="card-body ">
+
+                            <h5 class="card-title ">Mód Transformaciones</h5>
+                            <p class="card-text ">Módulo de transformaciones</p>
+                            <a href="# " class="btn btn-secondary " onclick="window.location.href='/module3'">Empezar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+
+    </section>
+
+
+</body>
+
+</html>

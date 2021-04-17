@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<!--ayuda a los navegadores para saber que version es -->
+<html lang="en">
+
+<head>
+    <!--No se van a ver en la pagina web-->
+    <title> Programa'Study</title>
+    <meta charset="utf-8">
+    <!--para que permita la ñ y los asentos-->
+    <meta name="viewport" content "width=device-width, initial-scale=1">
+    <!--para redimensionar la web en movil-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="../stylee4.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&skin=doxy" defer="defer"></script>
+</head>
+
+<body>
+    <header>
+        <!--estructura de la web-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">LVaED</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="presentacion.html">Presentacion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Transformaciones</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cover d-flex justify-content-center align-items-center flex-column ">
+            <h1>
+                LISTAS J A V A
+            </h1>
+            <p>
+                Web para mejorar tu programacion
+            </p>
+            <button class="btn btn-secondary " onclick="window.location.href='../Ejemplos.html'">Empieza tu aprendizaje
+            </button>
+        </div>
+
+
+    </header>
+
+    <div class="texto">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination" ALIGN=CENTER>
+
+                <li class="page-item"><a class="page-link" href="listaenlazada.html">1</a></li>
+                <li class="page-item"><a class="page-link" href="listasDobles.html">2</a></li>
+                <li class="page-item"><a class="page-link" href="listacircular.html">3</a></li>
+                <li class="page-item"><a class="page-link" href="circulardoble.html">4</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="texto">
+        <h3>
+            Listas Enlazadas
+        </h3>
+        <p><b>Clase List Node</b></p>
+        <pre class="prettyprint">
+            <code id="language-java">
+
+                <pre class="prettyprint">
+                    <code id="language-java">
+                        public class ListNode {
+            
+                            private Object object;
+                            public ListNode next;
+                        
+                            public ListNode() {
+                                this.object = null;
+                                this.next = null;
+                            }
+                        
+                            public ListNode(Object object) {
+                                this.object = object;
+                                this.next = null;
+                            }
+                        
+                            public ListNode(Object object, ListNode next) {
+                                this.object = object;
+                                this.next = next;
+                            }
+                        
+                            public Object getObject() {
+                                return object;
+                            }
+                        
+                            public void setObject(Object object) {
+                                this.object = object;
+                            }
+                        
+                            public boolean isEquals(Object object) {
+                                if (this.getObject().toString().equals(object.toString())) {
+                                    return true;
+                                }
+                                return false;
+                            }
+                        
+                            public boolean isEquals(ListNode node) {
+                                if (this.toString().equals(node.toString())) {
+                                    return true;
+                                }
+                                return false;
+                            }
+                        
+                            @Override
+                            public String toString() {
+                                return "ListNode{" +
+                                        "object=" + object +
+                                        ", next=" + next +
+                                        '}';
+                            }
+                        }
+                    </code>
+                </pre>
+        </code>
+        </pre>
+
+    </section>
+
+    <section class="texto">
+
+
+        <p><b>Clase List Node</b></p>
+
+        <pre class="prettyprint">
+            <code id="language-java">
+
+                public class ListNode {
+    
+                    private Object object;
+                    public ListNode next;
+                
+                    public ListNode() {
+                        this.object = null;
+                        this.next = null;
+                    }
+                
+                    public ListNode(Object object) {
+                        this.object = object;
+                        this.next = null;
+                    }
+                
+                    public ListNode(Object object, ListNode next) {
+                        this.object = object;
+                        this.next = next;
+                    }
+                
+                    public Object getObject() {
+                        return object;
+                    }
+                
+                    public void setObject(Object object) {
+                        this.object = object;
+                    }
+                
+                    public boolean isEquals(Object object) {
+                        if (this.getObject().toString().equals(object.toString())) {
+                            return true;
+                        }
+                        return false;
+                    }
+                
+                    public boolean isEquals(ListNode node) {
+                        if (this.toString().equals(node.toString())) {
+                            return true;
+                        }
+                        return false;
+                    }
+                
+                    @Override
+                    public String toString() {
+                        return "ListNode{" +
+                                "object=" + object +
+                                ", next=" + next +
+                                '}';
+                    }
+                }
+            </code>
+        </pre>
+
+    </section>
+
+
+    <section class="texto">
+        <p><b>Clase List</b></p>
+
+        <pre class="prettyprint">
+            <code id="language-java">
+
+                import java.util.Iterator;
+                import java.util.Arrays;
+                import static java.lang.System.*;
+
+                public class List implements ListInterface, Iterable<ListNode> {
+
+                    private ListNode inode;
+                    private int size;
+
+                    public ListNode head;
+                    public ListNode tail;
+
+                    /**
+                    * List
+                    */
+                    public List() {
+                        clear();
+                    }
+
+                    /*
+                    ok
+                    */
+                    public List(Object object) {
+                        add(object);
+                    }
+
+                    /*
+                    ok
+                    */
+                    @Override
+                    public boolean isEmpty() {
+                        return head == null;
+                    }
+
+                    /*
+                    ok
+                    */
+                    @Override
+                    public int getSize() {
+                        return size;
+                    }
+
+                    /*
+                    ok
+                    */
+                    @Override
+                    public void clear() {
+                        head = null;
+                        tail = null;
+                        size = 0;
+                    }
+
+                    /*
+                    ok
+                    */
+                    @Override
+                    public Object getHead() {
+                        return head;
+                    }
+
+                    /*
+                    ok
+                    */
+                    @Override
+                    public Object getTail() {
+                        return tail;
+                    }
+
+                    /*
+                    ok
+                    */
+                    @Override
+                    public ListNode search(Object object) {
+                        Iterator<ListNode> i = this.iterator();
+                        ListNode inode;
+                        while ((inode = i.next()) != null) {
+                            if (inode.getObject().toString().equals(object.toString())) {
+                                return inode;
+                            }
+                        }
+                        return null;
+                    }
+
+                    /*
+                    ok
+                    */
+                    @Override
+                    public boolean add(Object object) {
+                        return insertHead(object);
+                    }
+
+                    /*
+                    ok
+                    */
+                        @Override
+                    public boolean insert(Object ob, Object object) {
+                        try {
+                            if (ob != null) {
+                                ListNode node = this.search(ob);
+                                if (node != null) {
+                                    return insert(node, object);
+                                } else {
+                                    return false;
+                                }
+                            } else {
+                                return false;
+                            }
+                        } catch (Exception e) {
+                            return false;
+                        }
+                    }
+                    /*
+                    ok
+                    */
+                    @Override
+                    public boolean insert(ListNode node, Object object) {
+                        try {
+                            if (node.next == null) {
+                                insertTail(object);
+                            } else {
+                                ListNode newNode = new ListNode(object);
+                                newNode.next = node.next;
+                                node.next = newNode;
+                            }
+                            return true;
+                        } catch (Exception e) {
+                            return false;
+                        }
+                    }
+                    /*
+                    ok
+                    */
+                    @Override
+                    public boolean insertHead(Object object) {
+                        try {
+                            if (isEmpty()) {
+                                head = new ListNode(object);
+                                tail = head;
+                            } else {
+                                head = new ListNode(object, head);
+                            }
+                            this.size++;
+                            return true;
+                        } catch (Exception e) {
+                            return false;
+                        }
+                    }
+
+                    /*
+                    ok
+                    */
+                    @Override
+                    public boolean insertTail(Object object) {
+                        try {
+                            if (isEmpty()) {
+                                head = new ListNode(object);
+                                tail = head;
+                            } 
+                            else {
+                                tail.next = new ListNode(object);
+                                tail = tail.next;
+                            }
+                            this.size++;
+                            return true;
+                        } catch (Exception e) {
+                            return false;
+                        }
+                    }
+
+                    /*
+                    ok
+                    */
+                    @Override
+                    public boolean remove(ListNode node) {
+                        if (head != null){
+                            if (head.next == null){
+                                clear();
+                            } 
+                            else{
+                            ListNode puntero = head;
+                            while (puntero.next != node){
+                                puntero = puntero.next;
+                            }
+                            puntero.next = node.next;
+                            node.next = null;
+                            }
+                        }
+                        size--;
+                        return true;
+                    }
+
+                    /*
+                    ok
+                    */
+                    @Override
+                    public boolean remove(Object object) {
+                        if (head != null){
+                            if (head.next == null){
+                                clear();
+                            } 
+                            else{
+                                ListNode node = search(object);
+                                ListNode puntero = head;
+                            while (puntero.next != node){
+                                puntero = puntero.next;
+                            }
+                            ListNode temp = puntero.next;
+                            puntero.next = temp.next;
+                            temp.next = null;
+                            }
+                                
+                        }
+                        size--;
+                        return false;
+                    }
+
+                    @Override
+                    public boolean contains(Object object) {
+                        if (isEmpty()){
+                            return false;
+                        } else {
+                            ListNode node = this.search(object);
+                            if (node != null){
+                                return true;
+                            }else{
+                                return false;
+                            }
+                        }
+                    }
+
+                    @Override
+                    public Object[] toArray(Object[] object) {
+                        object = new Object[this.size];
+                        Iterator<ListNode> i = this.iterator();
+                        int cont = 0;
+                        while(i.hasNext() && cont < this.size){
+                            object[cont]=i.next();
+                        }
+                        return new Object[this.size];
+                    }
+                    
+                    
+                    @Override
+                    public Object[] toArray(){
+                        Object[] object;
+                        object = new Object[this.size];
+                        Iterator<ListNode> i = this.iterator();
+                        int cont = 0;
+                        while(i.hasNext() && cont < this.size){
+                            object[cont]=i.next();
+                            cont++;
+                        }
+                        return object;
+                    }
+                    /*
+                    ok
+                    */
+                    @Override
+                    public ListNode getBeforeTo(ListNode node) {
+                        ListNode beforenode = head;
+                        while (beforenode !=null && beforenode.next!=node){
+                            beforenode = beforenode.next;
+                        }
+                        return beforenode;
+                    }
+                    @Override
+                    public Object getBeforeTo(){
+                        ListNode beforenode = this.head;
+                        while (beforenode !=null && beforenode.next!=this.inode){
+                            beforenode = beforenode.next;
+                        }
+                        return beforenode;
+                    }
+
+                    @Override
+                    public Object getNextTo(ListNode node) {
+                        Object ob = node.getObject();
+                        ListNode inode = this.search(ob);
+                        inode = inode.next;
+                        return inode;
+                    }
+                    @Override
+                    public Object getNextTo(){
+                        ListNode temp = this.search(inode);
+                        inode = temp.next;
+                        return inode;
+                    }
+
+                    @Override
+                    public List subList(ListNode from, ListNode to) {
+                        if (!isEmpty()){
+                        List subList = new List();
+                        subList.head = from;
+                        subList.tail = to;
+                        ListNode ite = head;
+                            while (ite.next!=to && ite != ite.next){
+                                subList.add(ite);
+                                ite = ite.next;
+                            }
+                            return subList;
+                        }else{
+                            return null;
+                        }
+                    }
+
+                    @Override
+                    public List sortList() {
+                        List sortList = new List();
+                        Object[] arreglo = this.toArray();
+                        Arrays.sort(arreglo);
+                        int cont = 0;
+                        while ( cont < arreglo.length){
+                            sortList.add(arreglo[cont]);
+                            cont++;
+                        }
+                        return sortList;
+                    }
+
+                    @Override
+                    public Iterator<ListNode> iterator() {
+                        inode = head;
+                        return new Iterator<>() {
+                            @Override
+                            public boolean hasNext() {
+                                return inode.next != null;
+                            }
+                            @Override
+                            public ListNode next() {
+                                if (inode != null) {
+                                    ListNode tmp = inode;
+                                    inode = inode.next;
+                                    return tmp;
+                                } else {
+                                    return null;
+                                }
+                            }
+                        };
+                    }
+
+                    public void rec(ListNode node) {
+                        if (node.next != null) {
+                            rec(node.next);
+                            // <- ;) ->
+                        }
+                        out.println(node.toString());
+                    }
+            }
+            </code>
+        </pre>
+    </section>
+    <br>
+    <br>
+
+</body>

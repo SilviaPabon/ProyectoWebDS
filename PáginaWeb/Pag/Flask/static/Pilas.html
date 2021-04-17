@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--ayuda a los navegadores para saber que version es -->
+<html lang="en">
+
+<head>
+    <!--No se van a ver en la pagina web-->
+    <title> Programa'Study</title>
+    <meta charset="utf-8">
+    <!--para que permita la ñ y los asentos-->
+    <meta name="viewport" content "width=device-width, initial-scale=1">
+    <!--para redimensionar la web en movil-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="stylee3.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!--estructura de la web-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">LVaED</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="presentacion.html">Presentacion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Transformaciones</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cover d-flex justify-content-center align-items-center flex-column ">
+            <h1>
+                P I L A S
+            </h1>
+            <p>
+                Web para mejorar tu programacion
+            </p>
+            <button class="btn btn-secondary " onclick="window.location.href='presentacion.html'">Empieza tu aprendizaje      
+            </button>
+        </div>
+
+        <section class="texto">
+            <p ALIGN=JUSTIFY>
+                La definición formal de pila es aquella: “estructura de datos de entradas ordenadas tales que sólo se pueden introducir y eliminar por un extremo, llamado cima” [1]. También reciben el nombre de stack en inglés, es importante recalar ese sólo de la definición,
+                si la estructura presenta un comportamiento distinto a este, deja de ser pila.<br> Esta estructura se caracteriza por un comportamiento LIFO por sus siglas en inglés Last-In, First-Out, que quiere decir que el primer elemento
+                en introducirse, es el último en salir, para aclarar un poco más, si se tiene una pila y se introducen 6 números: 1,2,3,4,5,6 y el primero entrar es 1, pues será el último en salir [1]. Un ejemplo ilustrará mejor:
+
+            </p>
+
+            <br>
+            <div align="center"><img src="imagenes/pila.jpg" height="350" width="480"></div>
+            <br>
+
+            <b>Ejemplo practico.</b> Un ejemplo en la vida cotidiana de esta estructura:<br><br>
+            <div>
+                <table class="default" ALIGN="center">
+
+                    <tr>
+                        <th>Apilación de libros sobre un escritorio.</th>
+                        <th>Apilación de sobre encima de una mesa.</th>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div align="center"><img src="imagenes/pila2.jpg" height="250" width="350"></div>
+                        </td>
+                        <td>
+                            <div align="center"><img src="imagenes/pila3.jpg" height="250" width="350"></div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+
+            <br>
+
+            <br>
+
+            <b>Caso de estudio</b><br>
+
+            <p ALIGN=JUSTIFY>
+                La pila o stack es una estructura de datos que puede resultar muy útil para el manejo de las expresiones matemáticas en notación infija, prefija y postfija. En estas notaciones tener claridad sobre la jerarquía de operaciones es importante, por ello,
+                el orden dando por la pila brinda una solución acertada. Si el lector se pregunta se pregunta qué es infija, aunque el nombre suene raro, es la notación habitual que se utiliza al hacer operaciones matemáticas: 2 * 4 /(1 + 1) = 3. En cuanto
+                a la notación prefija o también conocida como notación polaca, en lo que respecta a los operadores sea +, -, /, * van delante de los operandos, es decir los números, así: /*24+11. En cuanto a la notación postfija o también conocida como
+                notación polaca inversa, en lo que respecta a los operadores sea +, -, /, * van después de los operandos, es decir los números, así: 24*11+/ <br> <br>A continuación, se pondrá un algoritmo propuesto en el libro Estructuras
+                de Datos en C++ [1] en la página 329, donde se puede seguir la lógica para convertir una expresión que esté en notación infija a postfija, por medio de una Pila: <br> <br>
+            </p>
+            <div>
+                <b>"Inicio del algoritmo:</b>
+                <ul>
+                    <li>1.Obtener caracteres de la expresión y repetir los pasos 2 al 4 para cada carácter.</li>
+                    <li>2. Si es un operando, pasarlo a la expresión postfija.</li>
+                    <li>3. Si es operador:
+                        <ul>
+                            <li>3.1. Si la pila está vacía, meterlo en la pila. Repetir a partir de 1.</li>
+                            <li>3.2. Si la pila no está vacía: Si prioridad del operador es mayor que prioridad del operador cima, meterlo en la pila y repetir a partir de 1. Si prioridad del operador es menor o igual que prioridad del operador cima, sacar
+                                operador cima de la pila y ponerlo en la expresión postfija, volver a 3.
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>4. Si es paréntesis derecho:
+                        <ul>
+                            <li>4.1. Sacar operador cima y ponerlo en la expresión postfija.</li>
+                            <li>4.2. Si el nuevo operador cima es paréntesis izquierdo, suprimir elemento cima.</li>
+                            <li>4.3. Si cima no es paréntesis izquierdo, volver a 4.1.</li>
+                            <li>4.4. Volver a partir de 1.</li>
+                        </ul>
+                    </li>
+                    <li>5. Si quedan elementos en la pila pasarlos a la expresión postfija.</li>
+                </ul>
+                <b>Fin del algoritmo" [1]</b>
+                <br>
+            </div>
+            <br>
+
+            <div>
+                <b>OPERACIONES QUE SE PERMITEN</b>
+                <ul>
+                    <li>
+                        Una de las operaciones más características de esta estructura es Push. Como se pudo observar en una imagen anterior, con el método Push, se van ingresando los elementos dentro de la pila, como cuando se apilan unos papeles en un escritorio de uno en uno.
+                    </li>
+                    <li>
+                        Otra de las operaciones más características de esta estructura es Pop. Asimismo en la imagen, se puede apreciar el método Pop, con el cual se puede ir retirando, o desapilando los elementos que se encuentren en la pila cuantas veces sea necesario, uno
+                        a uno.
+                    </li>
+                    <li>Obtener el elemento de la cima sin eliminarlo, Peek.</li>
+                    <li>Comprobar su tamaño, Size.</li>
+                    <li>Comprobar si está llena o vacía, isEmpty.</li>
+                    <li>Se permiten otras más, pero estas son las más características. </li>
+                </ul>
+            </div>
+
+            <div>
+                <table class="default">
+
+                    <tr>
+                        <th>Ventajas</th>
+                        <th>Incovenientes</th>
+
+                    </tr>
+
+                    <tr>
+                        <td>Si se requiere una estructura de datos con una cantidad predefinida de elementos, la pila puede ser una excelente solución, controlando así el uso de memoria.</td>
+                        <td>
+                            Su inconveniente radica justamente en el comportamiento LIFO. Pudiendo resultar en un gasto de memoria adicional, en el peor de los casos, si se quisiera ver el elemento que está en el fondo de una pila, tendría que hacerse un continúo Pop hasta poder
+                            llegar a él, esto no sería un gran problema con pocos elementos, pero supóngase una pila de cientos de elementos.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+
+    </header>
+
+</body>

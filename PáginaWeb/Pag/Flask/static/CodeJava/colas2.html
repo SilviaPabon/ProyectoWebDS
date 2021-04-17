@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--ayuda a los navegadores para saber que version es -->
+<html lang="en">
+
+<head>
+    <!--No se van a ver en la pagina web-->
+    <title> Programa'Study</title>
+    <meta charset="utf-8">
+    <!--para que permita la ñ y los asentos-->
+    <meta name="viewport" content "width=device-width, initial-scale=1">
+    <!--para redimensionar la web en movil-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="stylee2.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&skin=doxy" defer="defer"></script>
+</head>
+
+<body>
+    <header>
+        <!--estructura de la web-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">LVaED</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="presentacion.html">Presentacion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Transformaciones</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cover d-flex justify-content-center align-items-center flex-column ">
+            <h1>
+                COLAS J A V A
+            </h1>
+            <p>
+                Web para mejorar tu programacion
+            </p>
+            <button class="btn btn-secondary " onclick="window.location.href='../Ejemplos.html'">Empieza tu aprendizaje
+            </button>
+        </div>
+
+    </header>
+
+    <div class="texto">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination" ALIGN=CENTER>
+
+                <li class="page-item"><a class="page-link" href="colas.html">1</a></li>
+                <li class="page-item"><a class="page-link" href="colas2.html">2</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+
+    <section class="texto">
+        <h3>Cola basada en Arreglos</h3>
+        <p><b>Clase ArrayQueue</b></p>
+
+        <pre class="prettyprint">
+            <code id="language-java">
+
+                import java.util.Arrays;
+                import java.util.Collections;
+                
+                public class ArrayQueue implements QueueInterface{
+                    
+                    private int size;
+                    private Object[] array;
+                
+                    public ArrayQueue(int size) {
+                        this.size = size;
+                        this.array = new Object[(size > 0) ? size : 1];
+                        clear();
+                    }
+                    
+                
+                    @Override
+                    public void clear() {
+                        for (int i = 0; i < array.length; i++) {
+                            array[i] = null;
+                        }
+                    }
+                
+                    @Override
+                    public boolean isEmpty() {
+                        return array[0] == null;
+                    }
+                
+                    @Override
+                    public Object extract() {
+                        if (!isEmpty()) {
+                            Object object = array[0];
+                            array[0] = null;
+                            return object;
+                        } else {
+                            return null;
+                        }
+                    }
+                
+                    @Override
+                    public boolean insert(Object object) {
+                        for (int i=0 ; i < array.length ; i++){
+                            if (array[i] == null){
+                                array[i] = object;
+                                return true;
+                            }
+                        }
+                        return false;
+                    }
+                
+                    @Override
+                    public int size() {
+                        return array.length;
+                    }
+                
+                    @Override
+                    public boolean search(Object object) {
+                        return Arrays.asList(array).contains(object);
+                    }
+                
+                
+                    @Override
+                    public void reverse() {
+                        Collections.reverse(Arrays.asList(array));
+                    }
+                    
+                    @Override
+                    public void sort() {
+                        Arrays.sort(array);
+                    }
+                
+                    @Override
+                    public String toString() {
+                        String arreglo ="Array= ";
+                        for (int i = 0; i<array.length ; i++){
+                            arreglo+= array[i] + " ";
+                        }
+                        return arreglo;
+                    }
+                }
+            </code>
+        </pre>
+    </section>
+
+    <section class="texto">
+
+        <pre class="prettyprint">
+            <code id="language-java">
+
+                public interface QueueInterface {
+                    public void clear();
+                    
+                    public boolean isEmpty();
+                    
+                    public Object extract();
+                    
+                    public boolean insert(Object object);
+                    
+                    public int size();
+                    
+                    public boolean search(Object object);
+                    
+                    public void sort();
+                    
+                    public void reverse();
+                    
+                    public String toString();
+                }
+            </code>
+        </pre>
+    </section>
+</body>
