@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--ayuda a los navegadores para saber que version es -->
+<html lang="en">
+
+<head>
+    <!--No se van a ver en la pagina web-->
+    <title> Programa'Study</title>
+    <meta charset="utf-8">
+    <!--para que permita la ñ y los asentos-->
+    <meta name="viewport" content "width=device-width, initial-scale=1">
+    <!--para redimensionar la web en movil-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="stylee5.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!--estructura de la web-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">LVaED</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="presentacion.html">Presentacion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Transformaciones</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cover d-flex justify-content-center align-items-center flex-column ">
+            <h1>
+                A R B O L E S
+            </h1>
+            <p>
+                Web para mejorar tu programacion
+            </p>
+            <button class="btn btn-secondary " onclick="window.location.href='presentacion.html'">Empieza tu aprendizaje      
+            </button>
+        </div>
+
+
+    </header>
+    <section class="texto">
+
+        <h3>Árbol binario</h3>
+        <p ALIGN=JUSTIFY>
+            Un árbol binario es una estructura de datos dinámica no lineal en la cual ningún nodo constará con más de dos subárboles, cada nodo puede tener, cero, uno o dos hijos. Al nodo izquierdo se le conoce como hijo izquierdo y al nodo derecho como hijo derecho.
+        </p>
+        <div align="center"><img src="imagenes/arb1.png" height="380" width="350"></div>
+        <h5>Ejemplos practicos</h5>
+        <p ALIGN=JUSTIFY>
+            Caso de estudio = null. Operaciones que se permiten CrearÁrbol, operación que se usará para iniciar un árbol vacío. Construir, operación que crea un árbol con un elemento raíz y dos ramas, izquierda y derecha que son a su vez árboles. EsVacio, operación
+            que comprobará si un árbol no tiene nodos. Raíz, esta operación retornará la raíz. Izquierdo/Derecho, estas operaciones retornaran la rama o subárbol respectivo de un árbol dado. Borrar, esta operación permitirá eliminar el nodo con un elemento
+            determinado. Pertenece, operación que determinará si un elemento está presente en el árbol. Ventajas Su eficiencia de búsqueda es mayor que en los árboles no equilibrados Inconvenientes El tiempo de búsqueda puede crecer hasta hacerse lineal
+            si el árbol está degenerado.
+        </p>
+        <br>
+
+
+        <h3>Árbol binario de búsqueda</h3>
+        <p ALIGN=JUSTIFY>
+            Son un tipo de árbol binario que deberá cumplir con que el subárbol izquierdo de cualquier nodo contenga valores menores que el que contiene dicho nodo, y el subárbol derecho contenga valores mayores.
+        </p>
+        <h5>Ejemplos practicos</h5>
+        <p ALIGN=JUSTIFY>
+            Caso de estudio = null. Operaciones que se permiten Una de las operaciones más conocidas es recorrer el árbol, este recorrido se puede hacer de tres maneras, in-orden, pre-orden y pos-orden. El recorrido In-orden recorrerá el árbol yendo al subárbol izquierdo,
+            sacando la raíz y luego yendo al subárbol derecho. El recorrido Pre-orden recorrerá el árbol sacando la raíz, yendo al subárbol izquierdo y luego yendo al subárbol derecho. El recorrido Pos-orden recorrerá el árbol yendo al subárbol izquierdo,
+            luego yendo al subárbol derecho sacando la raíz. Ejemplo:
+        </p>
+        <div align="center"><img src="imagenes/arb2.png" height="380" width="410"></div>
+        <p ALIGN=CENTER>
+            Pre-orden: 421357<br> In-orden: 123457<br> Pos-orden: 132754<br>
+        </p>
+        <p ALIGN=JUSTIFY>
+            Estos árboles también permitirán la inserción de datos siguiendo una regla, si el dato a ingresar es mayor que el nodo padre de ese árbol, el dato irá hacia la derecha, mientras que, si el dato es menor que el nodo padre, irá hacia la izquierda Al permitir
+            la inserción de datos, también permitirá la eliminación de los mismos, si el dato a eliminar es una hoja, solo se deberá eliminar el enlace con el nodo padre de ese árbol, si el dato a eliminar es un nodo padre con un solo hijo, se deberá
+            de cambiar el enlace del nodo padre con su nodo padre y realizarlo con el nodo hijo y en caso de que el nodo a eliminar tenga dos hijos, se deberá buscar el dato más próximo que se encuentra en sus nodos hijos. Además, se permitirá buscar
+            un nodo, esta acción devolverá la referencia al nodo del árbol o un null. Ventajas La búsqueda de datos se hace muy breve ya que los datos se van almacenando con un orden, por consiguiente, para encontrar cada dato solo se debe seguir la lógica
+            de la regla estipulada. Inconvenientes Los valores del nodo deben ser un tipo de dato comparable, como lo son los enteros (int). Otro inconveniente, es cuando se crea un árbol degenerado, estos árboles degenerados son el producto de una inserción
+            de objetos tal que cada nodo solo tiene un nodo hijo, generando así una lista. [1]<br> <b>Ventajas</b><br>La búsqueda de datos se hace muy breve ya que los datos se van almacenando con un orden, por consiguiente, para encontrar
+            cada dato solo se debe seguir la lógica de la regla estipulada.<br> <b>Inconvenientes.</b><br>Los valores del nodo deben ser un tipo de dato comparable, como lo son los enteros (int). Otro inconveniente, es cuando se crea un árbol degenerado,
+            estos árboles degenerados son el producto de una inserción de objetos tal que cada nodo solo tiene un nodo hijo, generando así una lista. [1]
+        </p>
+        <br>
+
+        <h3>Árbol binario AVL</h3>
+        <p ALIGN=JUSTIFY>
+            Un árbol AVL o árbol equilibrado es un tipo de árbol binario de búsqueda en el que las alturas de los subárboles izquierdo y derecho de cualquier nodo difieren como máximo en 1.
+        </p>
+        <div align="center"><img src="imagenes/arb3.png" height="380" width="490"></div>
+        <h5>Ejemplos practicos</h5>
+        <p ALIGN=JUSTIFY>
+            Caso de estudio=null Operaciones que se permiten Las operaciones a realizar con un árbol de búsqueda equilibrado son las mismas que con un árbol de búsqueda, esto quiere decir que estos árboles permitirán realizar un recorrido se puede hacer de tres maneras,
+            in-orden, pre-orden y pos-orden. El recorrido In-orden recorrerá el árbol yendo al subárbol izquierdo, sacando la raíz y luego yendo al subárbol derecho. El recorrido Pre-orden recorrerá el árbol sacando la raíz, yendo al subárbol izquierdo
+            y luego yendo al subárbol derecho. El recorrido Pos-orden recorrerá el árbol yendo al subárbol izquierdo, luego yendo al subárbol derecho sacando la raíz. Estos árboles también permitirán la inserción de datos siguiendo dos reglas, primero
+            si el dato a ingresar es mayor que el nodo padre de ese árbol, el dato irá hacia la derecha, mientras que, si el dato es menor que el nodo padre, irá hacia la izquierda y segundo, debe mantener el factor de equilibrio como -1, 0 o 1, en caso
+            de que no, se deberá de realizar una serie de rotaciones hasta conseguir el equilibrio. Al permitir la inserción de datos, también permitirá la eliminación de los mismos, si el dato a eliminar es una hoja, solo se deberá eliminar el enlace
+            con el nodo padre de ese árbol, si el dato a eliminar es un nodo padre con un solo hijo, se deberá de cambiar el enlace del nodo padre con su nodo padre y realizarlo con el nodo hijo y en caso de que el nodo a eliminar tenga dos hijos, se
+            deberá buscar el dato más próximo que se encuentra en sus nodos hijos. Además, se permitirá buscar un nodo, esta acción devolverá la referencia al nodo del árbol o un null.<br> <b>Ventajas</b><br>Permiten localizar una clave de
+            búsqueda con un coste logarítmico.<br> <b>Inconvenientes.</b><br>Requiere de un proceso de reestructuración en caso de que el árbol no esté en equilibrio
+        </p>
+        <br>
+
+        <h3>Árbol B</h3>
+        <p ALIGN=JUSTIFY>
+            Los árboles B son árboles m-arios, cada nodo tiene como máximo m ramas, no tiene subárboles vacíos y siempre están en un equilibrio perfecto (factor de equilibrio = 0). Estos árboles cuentan con las siguientes características: Todas las páginas hoja están
+            en el mismo nivel. Todas las páginas internas, menos la raíz, tienen a lo sumo m ramas (no vacías) y como mínimo m/2 ramas. El número de claves en cada página interna es uno menos que el número de sus ramas, y cada clave divide la de las ramas
+            a manera de un ABB (Árbol binario de búsqueda). La raíz tiene como máximo m ramas, puede llegar a tener hasta 2 y ninguna si el árbol solo consta con la raíz.
+        </p>
+        <div align="center"><img src="imagenes/arb4.png" height="380" width="1050"></div>
+        <br>
+        <h5>Ejemplos practicos</h5>
+        <p ALIGN=JUSTIFY>
+            Caso de estudio.<br> Operaciones que se permiten Se permite la operación Crear, que inicializará un árbol B como árbol vacío, también se permitirá Buscar, que, según una clave, se realizará una búsqueda de la clave, este proceso retornará
+            la dirección del nodo y la posición del mismo, además se permitirá operar con los métodos de Insertar y Eliminar, los cuales añadirán y borrarán respectivamente una clave del árbol B, el árbol resultante deberá de mantener las características
+            de árbol B.<br> <b>Ventajas</b><br>En caso de tener las claves en un disco, el número de accesos al disco disminuye notablemente.<br><b>Inconvenientes</b><br>Usualmente se almacenan las claves en dispositivos de almacenamiento secundario.
+        </p>
+        <br>
+        <br>
+
+        <table class="default">
+
+            <tr>
+                <th scope="col">No</th>
+
+                <th>Referencias</th>
+            </tr>
+
+            <tr>
+                <th>[1]</th>
+
+                <td>L. Joyanes, L. Sánchez y I. Zahonero, Estructuras de Datos en C++, Madrid: McGRAW-HILL, 2007. </td>
+            </tr>
+
+            <tr>
+
+        </table>
+
+
+    </section>
+</body>

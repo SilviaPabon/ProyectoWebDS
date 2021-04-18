@@ -8,6 +8,8 @@ if __name__=='__main__':
     print(nueva.add(1))
     nueva.add(2)
     nueva.add(3)
+    nueva.add(3.1)
+    nueva.add(4)
 
     print("Imprimir lista, probar vacío, obtener cola")
     print(nueva)
@@ -15,12 +17,12 @@ if __name__=='__main__':
     print(nueva.getTail().object)
 
     print("Insertar cabeza en llena, vacía y vacía")
-    nueva.instertHead("Inicio")
+    nueva.insertHead("Inicio")
     print(nueva.Show())
     nueva2 = List()
-    nueva2.instertHead("Inicio2")
+    nueva2.insertHead("Inicio2")
     print(nueva2.Show())
-    nueva2.instertHead("o2")
+    nueva2.insertHead("o2")
     print(nueva2.Show())
 
     print("Eliminar")
@@ -28,10 +30,21 @@ if __name__=='__main__':
     print(nueva.Show())
     print(nueva.getSize())
 
-    print("Buscar")
-    
+    print("Buscar/contains")
     nueva.search("Inicio")
+    print(nueva2.search("I"))
+    print(nueva2)
+    print(nueva2.__contains__("o2"))
+    print("arreglo")
+    for obj in nueva.toarray():
+        print(obj)
+    print("arreglo")
 
+
+    nueva.insert(4, 33)
+    print(nueva)
+    nueva3 = List()
+    nueva3.isEmpty()
 
 
 
@@ -46,29 +59,27 @@ public Object getHead(); //ready
 
 public Object getTail(); //ready
 
-public ListNode search(Object object); 
+public ListNode search(Object object); //ready
 
 public boolean add(Object object); //ready
 
-public boolean insert(ListNode node, Object object); 
+public boolean insert(ListNode node, Object object); //ready
 
-public boolean insert(Object ob, Object object); 
+public boolean insert(Object ob, Object object); //ready
 
 public boolean insertHead(Object ob, Object object); //ready
 
 public boolean insertTail(Object ob, Object object); //ready
 
-public boolean remove(ListNode node); 
+public boolean remove(ListNode node); //ready
 
-public boolean remove(Object object);
+public boolean remove(Object object); //ready
+//expension
+public boolean contains(Object object); //ready
 
-public boolean contains(Object object); 
+public Object[] toArray(); //ready
 
-public Iterator<ListNode> iterator(); 
-
-public Object[] toArray(); 
-
-public Object[] toArray(Object[] object); 
+public Object[] toArray(Object[] object); //ready
 
 public Object getBeforeTo();
 
@@ -78,9 +89,9 @@ public Object getNextTo();
 
 public Object getNextTo(ListNode node);
 
-public List subList(ListNode from, ListNode to);
+public List subList(ListNode from, ListNode to); //ready
 
-public List sortList(); 
+public List sortList(); //ready
 """
 
 

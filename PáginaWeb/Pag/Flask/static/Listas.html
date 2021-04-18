@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--ayuda a los navegadores para saber que version es -->
+<html lang="en">
+
+<head>
+    <!--No se van a ver en la pagina web-->
+    <title> Programa'Study</title>
+    <meta charset="utf-8">
+    <!--para que permita la ñ y los asentos-->
+    <meta name="viewport" content "width=device-width, initial-scale=1">
+    <!--para redimensionar la web en movil-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="stylee4.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!--estructura de la web-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">LVaED</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="presentacion.html">Presentacion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Transformaciones</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cover d-flex justify-content-center align-items-center flex-column ">
+            <h1>
+                L I S T A S
+            </h1>
+            <p>
+                Web para mejorar tu programacion
+            </p>
+            <button class="btn btn-secondary " onclick="window.location.href='presentacion.html'">Empieza tu aprendizaje      
+            </button>
+        </div>
+
+
+    </header>
+    <section class="texto">
+
+        <h3>Listas Sencillas</h3>
+
+        <p ALIGN=JUSTIFY>
+            En la estructura de dato se conocen algunos términos los cuales son de vital importancia que el usuario conozca, un ejemplos de ellos son los siguientes tales como: Una lista enlazada o encadenada es aquella que nos agiliza el almacenamiento de datos
+            de tal forma que este organizada esta es similar a los vectores una diferencia entre estos dos es que la lista posee una estructura dinámica esto hace que no sea tan fundamenta (no significa que no lo sea) saber a priori los elementos que
+            puede llegar a contener.
+        </p>
+
+        <br>
+        <div align="center"><img src="imagenes/Listass.jpg" height="350" width="480"></div>
+        <br>
+
+        <p ALIGN=JUSTIFY>
+            Una lista enlazada cada uno de sus elementos apunta al que le sigue, pero menos el que esta ubicado en la última posición ya que no tiene sucesor, puesto a esto el valor es null. Por esto mismo los elementos que la contienen se registran los elementos
+            que contenedores del dato a almacenar y su respectivo enlace del siguiente. Por lo general estos reciben el nombre de nodos de lista.
+        </p>
+        <br>
+        <div>
+            <table class="default">
+
+                <tr>
+                    <th>Ventajas</th>
+                    <th>Incovenientes</th>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        Tiene un criterio claro para la inserción y extracción de elementos.
+                    </td>
+                    <td>
+                        Si el algoritmo o requerimiento no necesita de criterio de prioridad, existen otras estructuras que podrían manejar de manera más efectiva lo solicitado.
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </section>
+
+    <section class="texto">
+        <h3>Listas Doblemente Enlazadas</h3>
+
+        <p align="justify">
+            A estos términos las acompañan las listas doblemente enlazadas las cuales es un tipo de dato abstracto (TDA) de manera dinámica y lineal pero como es doblemente enlazada tiene su diferencia la cual es que cada nodo de lista tiene dos punteros como su
+            nombre lo dice (doble) de tal forma que cada uno apunta al siguiente nodo y el restante al predecesor. Esta característica tiene una ventaja la cual es que se puede manejar o recorrer en doble sentido lo cual no se puede hacer en una lista
+            simple.
+            <br> Estas listas están acompañadas por las colas la cual es una estructura donde al entrar el primer elemento este mismo es el que primero sale a esto se le llama FIFO que quiere decir (First in, First Out). Esta estructura de datos se puede
+            definir como una lista enlazada con acceso FIFO a la que sólo se tiene acceso al final de la lista para meter elementos y al principio de esta para sacarlos.<br> Una lista doblemente enlazada se puede representar de la siguiente manera:
+        </p>
+        <br>
+        <div align="center"><img src="imagenes/ListasDobles.gif" height="250" width="980"></div>
+        <br>
+        <p ALIGN=JUSTIFY>
+            En esta imagen se nota que el nodo del inicio tiene un apuntador anterior hacia nulo, de la misma forma el ultimo nodo tiene el apuntador al nudo siguiente que es nulo.
+        </p>
+        <div>
+            <table class="default">
+
+                <tr>
+                    <th>Ventajas</th>
+                    <th>Incovenientes</th>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        Estas listas son convenientes en el desarrollo de aplicaciones donde los usuarios quieren acceder a los elementos en este caso (nodos) en el orden deseado, para ello son las listas dobles.
+                    </td>
+                    <td>
+                        A la hora de codificar se puede volver complejo y ocupa un espacio considerable de memoria. </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <br>
+    <section class="texto">
+        <h3>Listas Circulares Encadenadas</h3>
+        <p ALIGN=JUSTIFY>
+            Una lista circular es un conjunto de datos que poseen similitud a las listas enlazadas simples, pero con características adicionales como es el desplazamiento dentro de ella este no tiene fin, ya que sus datos tienen un orden el cual cada nodo apunta
+            al siguiente y el ultimo apunta al primero en vez de apuntar al null, esto es lo que la hace diferente a las demás listas. En este tipo de listas no existe ningún tipo de posibilidad donde se pueda desplazar se llegue a una determinada posición
+            la cual no tenga manera de llegar según su orden, cosa que si se puede en la doble enlazada. La estructura se puede representar de la siguiente manera.
+        </p>
+        <div align="center"><img src="imagenes/Circular1.jpg" height="250" width="850"></div>
+        <br>
+        <div>
+            <table class="default">
+
+                <tr>
+                    <th>Ventajas</th>
+                    <th>Incovenientes</th>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        Esta tiene como ventaja recorrer la estructura no dependiendo de un punto en especifico junto con esto tiene la facilidad de acceder al primer nodo mediante el puntero siempre de igual manera al último nodo.
+                    </td>
+                    <td>
+                        Al no tener un cuidado a la hora de buscar un dato ya que la lista el circular se puede generar un bucle infinito para evitar eso se recomienda determinar un punto inicial o como cabeza.
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+</body>

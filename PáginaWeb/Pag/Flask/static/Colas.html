@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--ayuda a los navegadores para saber que version es -->
+<html lang="en">
+
+<head>
+    <!--No se van a ver en la pagina web-->
+    <title> Programa'Study</title>
+    <meta charset="utf-8">
+    <!--para que permita la ñ y los asentos-->
+    <meta name="viewport" content "width=device-width, initial-scale=1">
+    <!--para redimensionar la web en movil-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="stylee7.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!--estructura de la web-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">LVaED</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="presentacion.html">Presentacion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Transformaciones</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cover d-flex justify-content-center align-items-center flex-column ">
+            <h1>
+                C O L A S
+            </h1>
+            <p>
+                Web para mejorar tu programacion
+            </p>
+            <button class="btn btn-secondary " onclick="window.location.href='presentacion.html'">Empieza tu aprendizaje      
+            </button>
+        </div>
+    </header>
+    <section class="texto">
+        <B>Definicion</B><br>
+        <p ALIGN=JUSTIFY>
+            La definición formal es la siguiente, una cola es aquella estructura de datos en la cual sus elementos mantienen cierta organización, teniendo en cuenta que sólo es posible ingresar elementos por uno de sus extremos, es decir su final, y eliminar o substraer
+            elementos por el otro extremo, es decir su frente o inicio [1]. También reciben el nombre de queue en inglés. <br>Esta estructura se caracteriza por un comportamiento FIFO por sus siglas en inglés First-In, First-Out, que quiere
+            decir que el primer elemento en introducirse es el primero en salir, para aclarar un poco más, si se tiene una pila y se introducen 6 números: 1,2,3,4,5,6 y el primero entrar es 1, pues será el primero en salir [1]. Un ejemplo ilustrará mejor:
+        </p>
+        <br>
+        <div align="center"><img src="imagenes/Cola.jpg" height="350" width="680"></div>
+        <br>
+        <p ALIGN=JUSTIFY><b>Operaciones que se permiten</b></p>
+        <div>
+            <ul>
+                <li>
+                    Una de las operaciones más características de esta estructura es Insertar o en inglés Queue. Implementar este método implica que el primer en ingresar, sólo podrá ingresar por un extremo, el usuario es libre de elegir si hacerlo por izquierda o por derecha,
+                    por head o tail.
+                </li>
+                <li>
+                    Otra de las operaciones más características de esta estructura es Extraer o en inglés Dequeue. Dependiendo del comportamiento elegido en el anterior método, actuará este, es decir, si el usuario eligió insertar por tail, la extracción será por head, si
+                    elige insertar por head, se extraerá el elemento por tail.
+                </li>
+                <li>Obtener el elemento que esté en el frente o head de la cola, sin eliminarlo, getFront.</li>
+                <li>Comprobar su tamaño, Size.</li>
+                <li>Comprobar si está llena o vacía, isEmpty.</li>
+                <li>Se permiten otras más, pero estas son las más características. </li>
+            </ul>
+        </div>
+        <div>
+            <table class="default">
+
+                <tr>
+                    <th>Ventajas</th>
+                    <th>Incovenientes</th>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        Si la cola es implementada por medio de un Array, será mucho más sencillo por medio de los índices acceder al primer o último elemento.<br>Ofrece la posibilidad de según el requerimiento que se tenga, trabajar con el comportamiento
+                        <b>FIFO.</b>
+                    </td>
+                    <td>
+                        Si la cola es implementada por medio de un Array, tendrá una limitación en cuanto a que no podrá crecer dinámicamente en comparación a la implementación por medio de una Lista, aunque la desventaja de trabajar con ésta última es que el espacio para las
+                        referencias en los nodos ocupará memoria.
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <br>
+
+    <section class="texto">
+        <h3>Colas De Prioridad</h3>
+        <p ALIGN=JUSTIFY>
+            La Cola con Prioridad es un caso particular de la estructura de datos Cola que se caracteriza por tener un criterio que permite el almacén de sus elementos según un orden, de tal manera que sí y sólo sí, se extraigan según este criterio.
+            <BR> Un ejemplo de este tipo de Colas se encuentra en los procesos manejados por un procesador, donde siempre se ejecutará en primer lugar, el que tenga mayor prioridad.
+        </p>
+        <br>
+        <div align="center"><img src="imagenes/Cola2.jpg" height="250" width="350"></div>
+        <br>
+        <p ALIGN=JUSTIFY>
+            <b>Casos de estudio.</b> En el libro de Estructuras de Datos y Algoritmos en Java de Adam Drozdek, se presenta brevemente un caso de estudio sobre la simulación de un banco, donde los gerentes del mismo desean saber si tener 6 empleados atendiendo
+            son demasiados. Para esto se deben generar algunas variables que aleatoricen la llegada de los clientes y cuánto se demoran en su requerimiento, estas variables se van generando en arreglos. Los nuevos clientes se van almacenando en una Cola,
+            y dependiendo de las otras variables como el tiempo, se irá variando la disponibilidad de los empleados del banco y se irá desencolando según la llegada de los clientes, la Cola. Gracias a esta simulación se llega a la conclusión de que no
+            se requiere tal cantidad. Para ver en detalle el código remitirse a la página 156 del mismo. [2]
+        </p>
+
+        <p ALIGN=JUSTIFY><b>Operaciones que se permiten</b></p>
+        <div>
+            <ul>
+                <li>
+                    Se mantiene el método Insertar o en inglés Queue. Sólo que la insertación se hará según el criterio de prioridad.
+                </li>
+                <li>
+                    Se mantiene el método Extraer o en inglés Dequeue. Sólo que el elemento a extraer será aquél con mayor prioridad.
+                </li>
+                <li>Obtener el elemento que esté en el frente o head de la cola, sin eliminarlo, getFront, esta vez este tendrá la mayor prioridad.</li>
+                <li>Comprobar su tamaño, Size.</li>
+                <li>Comprobar si está llena o vacía, isEmpty.</li>
+                <li>Se permiten otras más, pero estas son las más características. </li>
+            </ul>
+        </div>
+        <div>
+            <table class="default">
+
+                <tr>
+                    <th>Ventajas</th>
+                    <th>Incovenientes</th>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        Tiene un criterio claro para la inserción y extracción de elementos.
+                    </td>
+                    <td>
+                        Si el algoritmo o requerimiento no necesita de criterio de prioridad, existen otras estructuras que podrían manejar de manera más efectiva lo solicitado.
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </section>
+
+</body>

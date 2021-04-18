@@ -1,0 +1,5 @@
+class clase:
+    def atrib1():
+        pass
+    def atrib2():
+        pass

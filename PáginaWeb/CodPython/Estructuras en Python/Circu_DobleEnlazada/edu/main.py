@@ -9,36 +9,45 @@ if __name__ == '__main__':
     dNueva.add("o1")
     dNueva.add("o2")
     dNueva.add("o3")
+    dNueva.insertHead("o0")
 
+    print(dNueva.Show())
+    print(dNueva.Show_Backwards())
+
+    print("remove")
+    dNueva.remove("o0")
+
+    print(dNueva.Show())
+    print(dNueva.Show_Backwards())
 
 """    
-public boolean isEmpty(); 
+public boolean isEmpty(); readycd
 
-public int getSize(); 
+public int getSize(); readycd
 
-public void clear(); 
+public void clear(); readycd
 
-public Object getHead(); 
+public Object getHead(); readycd 
 
-public Object getTail(); 
+public Object getTail(); readycd
 
-public ListNode search(Object object); 
+public ListNode search(Object object); readycd
 
-public boolean add(Object object); 
+public boolean add(Object object); readycd
 
 public boolean insert(ListNode node, Object object); 
 
 public boolean insert(Object ob, Object object); 
 
-public boolean insertHead(Object ob, Object object); 
+public boolean insertHead(Object ob, Object object); readycd
 
-public boolean insertTail(Object ob, Object object); 
+public boolean insertTail(Object ob, Object object); readycd
 
-public boolean remove(ListNode node); 
+public boolean remove(ListNode node); readycd 
 
-public boolean remove(Object object);
+public boolean remove(Object object); readycd 
 
-public boolean contains(Object object); 
+public boolean contains(Object object); readycd 
 
 public Iterator<ListNode> iterator(); 
 

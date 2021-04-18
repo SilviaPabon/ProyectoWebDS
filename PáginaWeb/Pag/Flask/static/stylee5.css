@@ -1,0 +1,32 @@
+body {
+    margin: 0cm;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.cover {
+    height: 400px;
+    color: rgb(255, 255, 255);
+    background-image: url(imagenes/Arboles.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.texto {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}

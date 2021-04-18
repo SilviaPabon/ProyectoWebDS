@@ -20,4 +20,4 @@ class CircuDoubListNode:
             return False
 
     def __str__(self):
-        return str("ListNode{") + str("object=") + str(self.object) + str(", next=") + str(self.next) + str("}")
+        return str("ListNode{") + str("object=") + str(self.object) + str("}")
