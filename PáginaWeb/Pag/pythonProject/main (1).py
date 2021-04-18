@@ -82,7 +82,7 @@ for node in ast.walk(code_ast):
     if isinstance(node, ast.ClassDef):
         print(node.body)
         for e in node.body:
-            print(e.name)
+            print("hola mundo", e)
 
 """file_contents = fd.read()
     module = ast.parse(file_contents)
