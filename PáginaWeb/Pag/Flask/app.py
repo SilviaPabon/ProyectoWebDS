@@ -32,10 +32,25 @@ def modulo3transform():
         return render_template("/module3.html")
     if request.method == "POST":
         archivo = request.files.get("file")
+        archivo2 = request.files.get("file2")
         if archivo is not None:
             #archivo virtual
             analizar = io.BytesIO()
             archivo.save(analizar)
+            #desde índice 1
+            analizar.seek(0)
+            lectura = analizar.read()
+            codfor_ast = ast.parse(lectura)
+            almacen = imgrafos(codfor_ast)
+
+            #hace el encode para ver imagen
+            img = b64encode(almacen)
+            return render_template("render.html", image = img.decode())
+
+        elif archivo2 is not None:
+            #archivo virtual
+            analizar = io.BytesIO()
+            archivo2.save(analizar)
             #desde índice 1
             analizar.seek(0)
             lectura = analizar.read()
