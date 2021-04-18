@@ -20,14 +20,13 @@ from base64 import b64encode
 
 from bs4 import BeautifulSoup
 
-import werkzeug
-
 #lo que incluye la app y va a servir
 app = Flask(__name__, static_url_path="")
 
+#función para convertir svg en código de python
 def tocode(bytesvg):
     with bytesvg as svgimg:
-
+        #se convertirá de ascii a encode
         f = io.BytesIO()
 
         # escaneando dentro del documento con BeautifulSoup
@@ -69,6 +68,7 @@ def tocode(bytesvg):
 def home():
     return redirect("/index.html")
 
+#cuando se sube un archivo a file2, se redirige allí y se obtiene un archivo python
 @app.route("/module3/reverse", methods=("POST",))
 def module3_reverse():
     archivo2 = request.files.get("file2")
