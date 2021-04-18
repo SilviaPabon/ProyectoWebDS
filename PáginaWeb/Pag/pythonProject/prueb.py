@@ -1,8 +1,8 @@
 class listaenlazada:
     def __init__(self):
-        self.size = 
-        self.head = 
-        self.tail = 
+        self.size = None
+        self.head = None
+        self.tail = None
     def remove(self):
         pass
     def insertar(self):

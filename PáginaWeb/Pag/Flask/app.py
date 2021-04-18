@@ -5,11 +5,12 @@ Created on Thu Feb 11 11:41:17 2021
 @author: SPEs
 """
 
+#librerías y frameworks a utilizar
 import io
 
 import ast
 #
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, send_file
 
 import networkx as nx
 
@@ -17,13 +18,70 @@ import matplotlib.pyplot as plt
 
 from base64 import b64encode
 
+from bs4 import BeautifulSoup
+
+import werkzeug
+
 #lo que incluye la app y va a servir
 app = Flask(__name__, static_url_path="")
+
+def tocode(bytesvg):
+    with bytesvg as svgimg:
+
+        f = io.BytesIO()
+
+        # escaneando dentro del documento con BeautifulSoup
+        soup = BeautifulSoup(svgimg, "html.parser")
+        setellipse = soup.find('g')
+        nodes = setellipse.find_all('text')
+        print(nodes)
+
+        listaatributos = []
+        listacolores = []
+        sumaatributos = ""
+        # condicionales por colores
+        # revisar con un diccionario
+
+        for node in nodes:
+            color = node['fill']
+            if color == '#FFB570':
+                f.write(('class ' + node.get_text() + ":" + '\n').encode())
+            if color == '#A0E2D8':
+                listaatributos.append(node.get_text())
+
+        for atrib in listaatributos:
+            sumaatributos += '        self.' + atrib + " = None" + '\n'
+        f.write(('    def ' + "__init__" + "(self):" + '\n').encode())
+        f.write(sumaatributos.encode())
+
+        for node in nodes:
+            color = node['fill']
+            print(color)
+            if color == '#087D0B':
+                f.write(('    def ' + node.get_text() + "(self):").encode())
+                f.write(('\n' + "        pass" + '\n').encode())
+
+        f.seek(0)
+        return f
 
 #dirige hacia allá
 @app.route("/")
 def home():
     return redirect("/index.html")
+
+@app.route("/module3/reverse", methods=("POST",))
+def module3_reverse():
+    archivo2 = request.files.get("file2")
+
+    if archivo2 is not None:
+        # archivo virtual
+        analizar = io.BytesIO()
+        archivo2.save(analizar)
+        # desde índice 1
+        analizar.seek(0)
+        return send_file(tocode(analizar), mimetype="application/x-python-code", as_attachment=True, attachment_filename="reverse.py")
+
+    return redirect("/module3")
 
 #methods especificar donde se nos pasa la info, donde va templates también
 @app.route("/module3", methods=("GET", "POST"))
@@ -32,25 +90,11 @@ def modulo3transform():
         return render_template("/module3.html")
     if request.method == "POST":
         archivo = request.files.get("file")
-        archivo2 = request.files.get("file2")
+
         if archivo is not None:
             #archivo virtual
             analizar = io.BytesIO()
             archivo.save(analizar)
-            #desde índice 1
-            analizar.seek(0)
-            lectura = analizar.read()
-            codfor_ast = ast.parse(lectura)
-            almacen = imgrafos(codfor_ast)
-
-            #hace el encode para ver imagen
-            img = b64encode(almacen)
-            return render_template("render.html", image = img.decode())
-
-        elif archivo2 is not None:
-            #archivo virtual
-            analizar = io.BytesIO()
-            archivo2.save(analizar)
             #desde índice 1
             analizar.seek(0)
             lectura = analizar.read()
