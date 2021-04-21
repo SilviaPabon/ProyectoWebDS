@@ -82,20 +82,5 @@ for node in ast.walk(code_ast):
     if isinstance(node, ast.ClassDef):
         print(node.body)
         for e in node.body:
-            print(e.name)
+            print("hola mundo", e)
 
-"""file_contents = fd.read()
-    module = ast.parse(file_contents)
-
-    class_definitions = [nodo for nodo in ast.walk(code_ast) if isinstance(nodo, ast.ClassDef)]
-    # class definitions
-    print(len(class_definitions))
-    for className in class_definitions:
-        print(className.name)
-
-    print("Printing function names now")
-    # function names
-    for val in class_definitions:
-        methods = [stmt for stmt in val.body if isinstance(stmt, ast.FunctionDef)]
-        for method in methods:
-        print(method.name)"""
