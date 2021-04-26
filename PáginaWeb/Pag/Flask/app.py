@@ -33,13 +33,11 @@ def tocode(bytesvg):
         soup = BeautifulSoup(svgimg, "html.parser")
         setellipse = soup.find('g')
         nodes = setellipse.find_all('text')
-        print(nodes)
 
         listaatributos = []
         listacolores = []
         sumaatributos = ""
         # condicionales por colores
-        # revisar con un diccionario
 
         for node in nodes:
             color = node['fill']
@@ -170,9 +168,9 @@ def imgrafos(codigo):
 
     # graficación
     pos = nx.circular_layout(g)
-    plt.figure(figsize=(15, 12))
+    plt.figure(figsize=(10, 7))
     nx.draw(g, pos, node_color='g', edgecolors='k', width=2.0, with_labels=True)
-    nx.draw(g, pos, nodelist=[clas], node_color='r', with_labels=True)
+    nx.draw(g, pos, nodelist=[clas], node_color='#FFB570', with_labels=True)
     nx.draw(g, pos, nodelist=[str(n) for n in listaargumentos], node_color='#e2a0cb', with_labels=True)
     nx.draw(g, pos, nodelist=[str(n) for n in listaatributos], node_color='#a0e2d8', with_labels=True)
     # guardado de archivo

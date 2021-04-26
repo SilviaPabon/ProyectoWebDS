@@ -25,26 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">LVaED</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="presentacion.html">Presentacion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Transformaciones</a>
-                        </li>
 
-                    </ul>
-                </div>
             </div>
         </nav>
 
@@ -57,7 +38,7 @@
             <p>
                 Web para mejorar tu programacion
             </p>
-            <button class="btn btn-secondary " onclick="window.location.href='../Ejemplos.html'">Empieza tu aprendizaje
+            <button class="btn btn-secondary " onclick="window.location.href='/Ejemplos.html'">Volver a Mod Ejemplos
             </button>
         </div>
 
@@ -94,6 +75,7 @@
                     protected:
                         Nodo* head;
                     public:
+                    //Métodos que se van a utilizar
                         Lista();
                         bool isEmpty();
                         int getSize();
@@ -113,8 +95,8 @@
                         Nodo* cola();
                         
                     };
-                    
                     bool Lista::isEmpty(){
+                        //Método para comprobar si está vacío
                         if (head == NULL){
                             return true;
                         }else{
@@ -123,6 +105,7 @@
                     }
                     
                     int Lista::getSize(){
+                        //Método para obtener el tamaño de la lista
                         Nodo* ite = head;
                         int size;
                         size = 1;
@@ -134,20 +117,24 @@
                     }
                     
                     void Lista::clear(){
+                        //Método para vaciar la lista
                         head = NULL;
                     }
                     
                     Dato Lista::getHead(){
+                        //Método para obtener la cabeza
                         return head -> getObject();
                     }
                     
                     Dato Lista::getTail(){
+                        //Método para obtener la cola
                         Nodo* tail;
                         tail = cola();
                         return tail -> getObject();
                     }
                     
                     Nodo* Lista::search(Dato object){
+                        //Método para buscar un dato
                         Nodo* iterador;
                         for (iterador = head; iterador != NULL; iterador = iterador->siguiente())
                             if (object == iterador ->getObject())
@@ -156,10 +143,12 @@
                     }
                     
                     void Lista::add(Dato object){
+                        //Método para agregar un dato a la lista
                         insertTail(object);
                     }
                     
                     void Lista::insert(Nodo* nodo, Dato object){
+                        //Método para insertar un dato a un nodo específico
                         Nodo* nuevo;
                         nuevo = new Nodo(object);
                         nuevo -> enlazar(nodo -> siguiente());
@@ -167,12 +156,14 @@
                     }
                     
                     void Lista::insert(Dato ref, Dato object){
+                        //Método para insertar un dato a un dato específico
                         Nodo* referencia;
                         referencia = search(ref);
                         insert(referencia,object);
                     }
                     
                     void Lista::insertHead(Dato object){
+                        //Método para insertar un dato por la cabeza
                         Nodo* nuevo;
                         nuevo = new Nodo(object);
                         nuevo -> enlazar(head);
@@ -180,11 +171,13 @@
                     }
                     
                     void Lista::insertTail(Dato object){
+                        //Método para insertar un dato por la cola
                         Nodo* cola = this -> cola();
                         cola -> enlazar(new Nodo(object));
                     }
                     
                     void Lista::remove(Nodo* nodo){
+                        //Método para eliminar un nodo
                         Dato object;
                         Nodo *iterador,*anterior;
                         bool encontrado;
@@ -208,6 +201,7 @@
                         }
                 
                     void Lista::remove(Dato object){
+                        //Método para eliminar un dato
                         Nodo *iterador,*anterior;
                         bool encontrado;
                         iterador = head;
@@ -235,6 +229,7 @@
                     }
                     
                     bool Lista::contains(Dato object){
+                        //Método para comprobar si el dato se encuentra en la lista
                         Nodo* iterador;
                         for (iterador = head; iterador != NULL; iterador = iterador->siguiente())
                             if (object == iterador ->getObject())
@@ -244,6 +239,7 @@
                     }
                     
                     Nodo* Lista::cola(){
+                        //Método para obtener el último dato de la lista
                         Nodo* ite = head;
                         if (ite == NULL) throw "Lista vacía";
                         while (ite->siguiente() != NULL) ite = ite->siguiente();
@@ -251,6 +247,7 @@
                     }
                 
                     void Lista::visualizar(){
+                        //Método para mostrar los datos de la lista
                         Nodo* ite;
                         int i = 0;
                         ite = head;
@@ -263,6 +260,7 @@
                     }
                     
                     Lista::Lista(){
+                        //Creación de la lista vacía
                         head = NULL;
                     }
             </code>

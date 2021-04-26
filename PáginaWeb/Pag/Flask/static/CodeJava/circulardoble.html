@@ -25,26 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">LVaED</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="presentacion.html">Presentacion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Transformaciones</a>
-                        </li>
 
-                    </ul>
-                </div>
             </div>
         </nav>
 
@@ -55,7 +36,7 @@
             <p>
                 Web para mejorar tu programacion
             </p>
-            <button class="btn btn-secondary " onclick="window.location.href='../Ejemplos.html'">Empieza tu aprendizaje
+            <button class="btn btn-secondary " onclick="window.location.href='/Ejemplos.html'">Volver a Mod Ejemplos
             </button>
         </div>
 
@@ -149,10 +130,7 @@
 
                 import java.util.Arrays;
                 import static java.lang.System.*;
-                /**
-                 *
-                 * @author Daniel
-                 */
+                
                 public class ListaDobleCircular {
                     
                     private int size;
@@ -166,11 +144,14 @@
                     public ListaDobleCircular(Object object) {
                         add(object);
                     }
-                    //Funciona
+
+
+                    //Funciona para añadir por cola el elemento ingresado 
                     public boolean add(Object object) {
                         return insertTail(object);
                     }
-                    //Funciona
+
+                    //Metodo para ingresar por cabeza el elemento ingresado por el usuario.
                     public boolean insertHead(Object object) {
                             if (isEmpty()) {
                                 head = new ListNode(object);
@@ -183,7 +164,7 @@
                             this.size++;
                             return true;
                     }
-                    //Funciona
+                    //Metodo para ingresar por cola el elemento ingresado por el usuario.
                     public boolean insertTail(Object object) {
                             if (isEmpty()) {
                                 head = new ListNode(object);
@@ -195,7 +176,7 @@
                             size++;
                             return true;
                     }
-                    //Funciona
+                    //Insertar nodo en la posicion indicada
                     public boolean insert(ListNode node, Object object){
                         try{
                             if (node.siguiente==head){
@@ -218,7 +199,7 @@
                             return false;
                         }
                     }
-                    //Funciona
+                    //Insertar elemento en la posicion indicada
                     public boolean insert(Object ob, Object object){
                         try{
                         if (ob != null){
@@ -236,29 +217,29 @@
                         }
                     }
                     
-                    //Funciona
+                    //Metodo que comprueba si esta cadena está vacía o no.
                     public boolean isEmpty() {
                         return head == null;
                     }
-                    //Funciona
+                    //Funciona para limpiar la lista en su totalidad.
                     public void clear() {
                         head = null;
                         tail = null;
                         size = 0;
                     }
-                    //Funciona
+                    //Funciona para obtener el tamaño o numero total de elementos.
                     public int getSize() {
                         return size;
                     }
-                    //Funciona
+                    //Retorna el valor mas encima de la lista, es decir la cabeza.
                     public Object getHead() {
                         return head.objeto;
                     }
-                    //Funciona
+                    //Retorna el valor mas abajo de la lista, es decir la cola.
                     public Object getTail() {
                         return tail.objeto;
                     }
-                    //Funciona
+                    //Funciona para eliminar el nodo indicado
                     public boolean remove(ListNode node){
                         if (head != null){
                             if (head.siguiente == head){
@@ -277,7 +258,7 @@
                         size--;
                         return true;
                     }
-                    //Funciona
+                    //Funciona para eliminar el elemento indicado
                     public boolean remove(Object objeto){
                         if (head!= null){
                             if (head.siguiente == head){
@@ -297,7 +278,7 @@
                         size--;
                         return true;
                     }
-                    //Funciona
+                    //Metodo para buscar el elemento que se desea
                     public ListNode search(Object object){
                         ListNode ite = head;
                         while(ite!=null && ite.objeto!=object && ite.siguiente != head){
@@ -309,7 +290,7 @@
                             return null;
                         }
                     }
-                    //Funciona
+                    //Hecho para verificar si el elemento tiene alguna subcadena o no.
                     public boolean contains(Object object){
                         if (isEmpty()){
                             return false;
@@ -322,17 +303,18 @@
                             }
                         }
                     }
-                    //Funciona
+                    //Metodo para retornar el elemento antes de x nodo que esta en la lista
                     public Object getBeforeTo(ListNode node){
                         ListNode before = node.anterior;
                         return before.objeto;
                     }
-                    //Funciona
+
+                    //Funciona para retornar el siguiente nodo del actual
                     public Object getNextTo(ListNode node){
                         ListNode next = node.siguiente;
                         return next.objeto;
                     }
-                    //Funciona
+                    //Funciona para devolver una vista de la parte de esta lista entre los especificados
                     public ListaDobleCircular subList(ListNode from, ListNode to){
                         ListaDobleCircular sublist = new ListaDobleCircular();
                         ListNode ite = from;
@@ -342,7 +324,7 @@
                         }
                         return sublist;
                     }
-                    //Funciona
+                    //Funciona para devolver una matriz que contiene todos los elementos
                     public Object[] toArray(){
                         Object[] objetos = new Object[size];
                         ListNode ite = head;
@@ -356,7 +338,7 @@
                 
                         return objetos;
                     }
-                    
+                    //Funciona para pasar a string el elemento como su propio nombre lo indica
                     @Override
                     public String toString(){
                         String lista="";

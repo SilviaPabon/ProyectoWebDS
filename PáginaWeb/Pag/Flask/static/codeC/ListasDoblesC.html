@@ -25,26 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">LVaED</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="presentacion.html">Presentacion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Transformaciones</a>
-                        </li>
 
-                    </ul>
-                </div>
             </div>
         </nav>
 
@@ -57,7 +38,7 @@
             <p>
                 Web para mejorar tu programacion
             </p>
-            <button class="btn btn-secondary " onclick="window.location.href='../Ejemplos.html'">Empieza tu aprendizaje
+            <button class="btn btn-secondary " onclick="window.location.href='/Ejemplos.html'">Volver a Mod Ejemplos
             </button>
         </div>
 
@@ -95,6 +76,7 @@
                     protected:
                     Nodo* head;
                     public:
+                    //Métodos que se van a utilizar
                         ListaDoble();
                         bool isEmpty();
                         int getSize();
@@ -115,6 +97,7 @@
                 };
                 
                 bool ListaDoble::isEmpty(){
+                    //Método para comprobar si está vacío
                         if (head == NULL){
                             return true;
                         }else{
@@ -123,6 +106,7 @@
                     }
                 
                 int ListaDoble::getSize(){
+                    //Método para obtener el tamaño de la lista
                         Nodo* ite = head;
                         int size;
                         size = 1;
@@ -134,21 +118,25 @@
                     }
                 
                 void ListaDoble::clear(){
+                    //Método para vaciar la lista
                         head = NULL;
                         head -> enlaceSiguiente(NULL);
                     }
                 
                 Dato ListaDoble::getHead(){
+                    //Método para obtener la cabeza
                         return head -> getObject();
                     }
                 
                 Dato ListaDoble::getTail(){
+                    //Método para obtener la cola
                         Nodo* tail;
                         tail = cola();
                         return tail -> getObject();
                     }
                 
                 Nodo* ListaDoble::search(Dato object){
+                    //Método para buscar un dato
                         Nodo* iterador;
                         for (iterador = head; iterador != NULL; iterador = iterador->siguiente())
                             if (object == iterador ->getObject())
@@ -157,10 +145,12 @@
                     }
                 
                 void ListaDoble::add(Dato object){
+                    //Método para agregar un dato a la lista
                         insertHead(object);
                     }
                 
                 void ListaDoble::insert(Nodo* prev ,Dato object){
+                    //Método para insertar un dato a un nodo específico
                     Nodo* nuevo;
                     nuevo = new Nodo(object);
                     nuevo -> enlaceSiguiente(prev -> siguiente());
@@ -171,12 +161,13 @@
                 }
                 
                 void ListaDoble::insert(Dato obj,Dato object){
+                    //Método para insertar un dato a un dato específico
                     Nodo* ref = search(obj);
                     insert (ref,object);
                 }
                 
-                void ListaDoble::insertHead(Dato object)
-                {
+                void ListaDoble::insertHead(Dato object){
+                    //Método para insertar un dato por la cabeza
                     Nodo* nuevo;
                     nuevo = new Nodo(object);
                     nuevo -> enlaceSiguiente(head);
@@ -186,6 +177,7 @@
                 }
                 
                 void ListaDoble::insertTail(Dato object){
+                    //Método para insertar un dato por la cola
                     Nodo* nuevo;
                     Nodo* tail = this -> cola();
                     nuevo = new Nodo(object);
@@ -195,24 +187,26 @@
                 }
                 
                 void ListaDoble::remove(Nodo* nodo){
+                    //Método para eliminar un nodo
                     Dato object = nodo -> getObject();
                     remove(object);	
                 }
                 
                 void ListaDoble::remove(Dato object){
+                    //Método para eliminar un dato
                     Nodo* ite;
                     bool encontrado = false;
                     ite = head;
                     while ((ite != NULL) && (!encontrado)){
                         encontrado = (ite -> getObject() == object);
                         if (!encontrado)
-                         ite = ite->siguiente();
+                        ite = ite->siguiente();
                     }
                     if (ite != NULL){
                         if (ite == head){
                             head = ite->siguiente();
                             if (ite -> anterior() != NULL)
-                             ite -> anterior() -> enlaceAnterior(NULL);
+                            ite -> anterior() -> enlaceAnterior(NULL);
                         }else  if (ite -> siguiente() != NULL){
                             ite -> anterior() -> enlaceSiguiente(ite ->siguiente());
                             ite -> siguiente() -> enlaceAnterior (ite -> anterior());
@@ -223,6 +217,7 @@
                 }
                 
                 bool ListaDoble::contains(Dato object){
+                    //Método para comprobar si el dato se encuentra en la lista
                         Nodo* iterador;
                         for (iterador = head; iterador != NULL; iterador = iterador->siguiente())
                             if (object == iterador ->getObject())
@@ -232,6 +227,7 @@
                     }
                     
                 void ListaDoble::visualizar(){
+                    //Método para mostrar los datos de la lista
                         Nodo* ite;
                         int i = 0;
                         ite = head;
@@ -244,6 +240,7 @@
                     }
                 
                 Nodo* ListaDoble::cola(){
+                    //Método para obtener el último dato de la lista
                         Nodo* ite = head;
                         if (ite == NULL) throw "Lista vacía";
                         while (ite->siguiente() != NULL) ite = ite->siguiente();
@@ -251,6 +248,7 @@
                     }
                 
                 ListaDoble::ListaDoble(){
+                    //Creación de la lista vacía
                         head = NULL;
                     }
             </code>

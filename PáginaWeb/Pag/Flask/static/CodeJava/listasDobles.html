@@ -25,26 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">LVaED</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="presentacion.html">Presentacion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Transformaciones</a>
-                        </li>
 
-                    </ul>
-                </div>
             </div>
         </nav>
 
@@ -55,7 +36,7 @@
             <p>
                 Web para mejorar tu programacion
             </p>
-            <button class="btn btn-secondary " onclick="window.location.href='../Ejemplos.html'">Empieza tu aprendizaje
+            <button class="btn btn-secondary " onclick="window.location.href='/Ejemplos.html'">Volver a Mod Ejemplos
             </button>
         </div>
 
@@ -148,6 +129,7 @@
                 
                 public class ListaDoble {
                     
+                    //Definir la cabeza y cola de la lista
                     private int size;
                     public ListNode head;
                     public ListNode tail;
@@ -159,11 +141,13 @@
                     public ListaDoble(Object object) {
                         add(object);
                     }
-                    //Funciona
+
+                    //Metodo para añadir elementos a la lista
                     public boolean add(Object object) {
                         return insertTail(object);
                     }
-                    //Funciona
+
+                    //Metodo utilizador para agregar elementos a la lista por cabeza
                     public boolean insertHead(Object object) {
                             if (isEmpty()) {
                                 head = new ListNode(object);
@@ -175,7 +159,7 @@
                             this.size++;
                             return true;
                     }
-                    //Funciona
+                    //Metodo utilizador para agregar elementos a la lista por parte de atras
                     public boolean insertTail(Object object) {
                             if (isEmpty()) {
                                 head = new ListNode(object);
@@ -187,7 +171,7 @@
                             size++;
                             return true;
                     }
-                    //Funciona
+                    //Metodo para agregar elemento en una posicion especifica
                     public boolean insert(ListNode node, Object object){
                         try{
                             if (node.siguiente==null){
@@ -228,29 +212,30 @@
                         }
                     }
                     
-                    //Funciona
+                    //Metodo para comprobar si la lista es vacia
                     public boolean isEmpty() {
                         return head == null;
                     }
-                    //Funciona
+
+                    //Metodo que tiene como funcion limpiar la lista en su totalidad
                     public void clear() {
                         head = null;
                         tail = null;
                         size = 0;
                     }
-                    //Funciona
+                    //Es utilizado para retornar el tamaño de la lista, mas concretamente el total de valores, elementos
                     public int getSize() {
                         return size;
                     }
-                    //Funciona
+                    //Retorna el valor mas encima de la lista, es decir la cabeza.
                     public Object getHead() {
                         return head.objeto;
                     }
-                    //Funciona
+                    ////Retorna el valor mas abajo de la lista, es decir la cola.
                     public Object getTail() {
                         return tail.objeto;
                     }
-                    //Funciona
+                    //Metodo implementado para eliminar un nodo de la lista.
                     public boolean remove(ListNode node){
                         if (head != null){
                             if (head.siguiente == null){
@@ -269,7 +254,7 @@
                         size--;
                         return true;
                     }
-                    //Funciona
+                    //Metodo que recibe como parametro el elemento que se quiere eliminar.
                     public boolean remove(Object objeto){
                         if (head!= null){
                             if (head.siguiente == null){
@@ -289,7 +274,7 @@
                         size--;
                         return true;
                     }
-                    //Funciona
+                    //Metodo para buscar en la lista el elemento ingresado
                     public ListNode search(Object object){
                         ListNode ite = head;
                         while(ite!=null && ite.objeto!=object){
@@ -301,7 +286,7 @@
                             return null;
                         }
                     }
-                    //Funciona
+                    //Hecho para verificar si el elemento tiene alguna subcadena o no.
                     public boolean contains(Object object){
                         if (isEmpty()){
                             return false;
@@ -315,10 +300,7 @@
                         }
                     }
                     
-                    /*public Object getBeforeTo(){
-                        
-                    }*/
-                
+                    //Metodo para retornar el elemento antes de x nodo que esta en la lista
                     public Object getBeforeTo(ListNode node){
                         ListNode before = node.anterior;
                         if (before == null){
@@ -329,9 +311,9 @@
                         
                     }
                 
-                    /*public Object getNextTo(){
-                    }*/
+                    
                 
+                    //Metodo para retornar el elemento despues de x nodo que esta en la lista
                     public Object getNextTo(ListNode node){
                         ListNode next = node.siguiente;
                         if (next == null){
@@ -341,7 +323,8 @@
                         }
                         
                     }
-                    //Funciona
+
+                    //Funciona para devolver una vista de la parte de esta lista entre los especificados
                     public ListaDoble subList(ListNode from, ListNode to){
                         ListaDoble sublist = new ListaDoble();
                         ListNode ite = from;
@@ -351,7 +334,7 @@
                         }
                         return sublist;
                     }
-                    //Funciona
+                    //Funciona para devolver una matriz que contiene todos los elementos
                     public Object[] toArray(){
                         Object[] objetos = new Object[size];
                         ListNode ite = head;
@@ -363,7 +346,8 @@
                         }
                         return objetos;
                     }
-                    //Funciona
+
+                    //Funciona para pasar a string el elemento como su propio nombre lo indica
                     @Override
                     public String toString(){
                         String lista="";
@@ -376,12 +360,6 @@
                         return lista;
                     }
                 
-                    
-                    
-                    /*
-                    public Object[] toArray(Object[] object);
-                    public List sortList();
-                    */
                 }
             </code>
         </pre>

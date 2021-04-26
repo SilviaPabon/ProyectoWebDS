@@ -25,26 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">LVaED</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="presentacion.html">Presentacion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Transformaciones</a>
-                        </li>
 
-                    </ul>
-                </div>
             </div>
         </nav>
 
@@ -55,7 +36,7 @@
             <p>
                 Web para mejorar tu programacion
             </p>
-            <button class="btn btn-secondary " onclick="window.location.href='../Ejemplos.html'">Empieza tu aprendizaje
+            <button class="btn btn-secondary " onclick="window.location.href='/Ejemplos.html'">Volver a Mod Ejemplos
             </button>
         </div>
 
@@ -72,80 +53,12 @@
             </ul>
         </nav>
     </div>
+
+
     <section class="texto">
         <h3>
             Listas Circulares
         </h3>
-        <p><b>Interface</b></p>
-        <pre class="prettyprint">
-            <code id="language-java">
-
-                <pre class="prettyprint">
-                    <code id="language-java">
-                        import java.util.Iterator;
-                       
-                        public interface ListInterface {
-                            
-                           
-                            public boolean isEmpty();
-                        
-                            public int getSize();
-                        
-                            public void clear();
-                        
-                            public Object getHead();
-                        
-                            public Object getTail();
-                        
-                            public ListNode search(Object object);
-                        
-                            public boolean add(Object object);
-                        
-                            public boolean insert(ListNode node, Object object);
-                        
-                            public boolean insert(Object ob, Object object);
-                        
-                            public boolean insertHead(Object object);
-                        
-                            public boolean insertTail(Object object);
-                        
-                            public boolean remove(ListNode node);
-                        
-                            public boolean remove(Object object);
-                        
-                            
-                            public boolean contains(Object object);
-                        
-                            /**
-                             *
-                             * @return
-                             */
-                            public Iterator<ListNode> iterator();
-                        
-                            public Object[] toArray();
-                        
-                            public Object[] toArray(Object[] object);
-                        
-                            public Object getBeforeTo();
-                        
-                            public ListNode getBeforeTo(ListNode node);
-                        
-                            public Object getNextTo();
-                        
-                            public Object getNextTo(ListNode node);
-                        
-                            public ListaCircular subList(ListNode from, ListNode to);
-                        
-                            public ListaCircular sortList();
-                        
-                        }
-                    </code>
-                </pre>
-        </code>
-        </pre>
-    </section>
-
-    <section class="texto">
         <p><b>Clase ListNode</b></p>
         <pre class="prettyprint">
             <code id="language-java">
@@ -232,28 +145,40 @@
                     public ListaCircular(){
                         clear();
                     }
+
+                    //Metodo para comprobar si la lista es vacia
                     @Override
                     public boolean isEmpty(){
                         return head == null;
                     }
+
+                    //Es utilizado para retornar el tamaño de la lista, mas concretamente el total de valores, elementos
                     @Override
                     public int getSize(){
                         return size;
                     }
+
+                    //Metodo que tiene como funcion limpiar la lista en su totalidad
                     @Override
                     public void clear() {
                         head = null;
                         tail = null;
                         size = 0;
                     }
+
+                    //Retorna el valor mas encima de la lista, es decir la cabeza.
                     @Override
                     public Object getHead() {
                         return head;
                     }
+
+                    //Retorna el valor mas abajo de la lista, es decir la cola.
                     @Override
                     public Object getTail() {
                         return tail;
                     }
+
+                    //Metodo utilizador para agregar elementos a la lista por cabeza
                     @Override
                     public boolean insertHead(Object object){
                         try {
@@ -271,6 +196,8 @@
                             return false;
                         }
                     }
+
+                    //Metodo utilizador para agregar elementos a la lista por cola
                     @Override
                     public boolean insertTail (Object object){
                         try{
@@ -289,10 +216,14 @@
                             return false;
                         }
                     }
-                        @Override
+
+                    //Metodo para añadir elementos a la lista
+                    @Override
                     public boolean add(Object object){
                         return insertTail(object);
                     }
+
+                    //Metodo para buscar en la lista el elemento ingresado
                     @Override
                     public ListNode search(Object object) {
                         Iterator<ListNode> i = this.iterator();
@@ -305,6 +236,8 @@
                         return null;
                     }
                     @Override
+
+
                     public boolean insert(Object ob, Object object) {
                         try {
                             if (ob != null) {
@@ -321,6 +254,8 @@
                             return false;
                         }
                     }
+
+                    //Metodo para agregar elemento en una posicion especifica
                     @Override
                     public boolean insert(ListNode node, Object object) {
                         try {
@@ -338,6 +273,8 @@
                         }
                         
                     }
+
+                    //Metodo implementado para eliminar un nodo de la lista.
                     @Override
                     public boolean remove(ListNode node) {
                         if (head != null){
@@ -357,8 +294,9 @@
                         size--;
                         return true;
                     }
-                    
-                        @Override
+
+                    //Metodo implementado para eliminar un elemento de la lista.
+                    @Override
                     public boolean remove(Object object) {
                         if (head != null){
                             if (head.next == head){
@@ -372,15 +310,15 @@
                         size--;
                         return false;
                     }
-                       /* @Override
-                    public Object getNextTo(){
-                    }*/
-                
+                   
+
+                    //Metodo para retornar el siguiente nodo de la lista
                     @Override
                     public Object getNextTo(ListNode node){
                         return node.next;
                     }
                     
+                    //Metodo para retornar el elemento antes de x nodo que esta en la lista
                     @Override
                     public ListNode getBeforeTo(ListNode node) {
                         ListNode beforenode = head;
@@ -390,6 +328,7 @@
                         return beforenode;
                     }
                     
+                    //Hecho para verificar si el elemento tiene alguna subcadena o no.
                     @Override
                     public boolean contains(Object object) {
                         if (isEmpty()){
@@ -403,7 +342,9 @@
                             }
                         }
                     }
-                        @Override
+
+                    //Metodo para recorrer la lista y presentar sus elementos.
+                    @Override
                     public Iterator<ListNode> iterator() {
                         inode = head;
                         return new Iterator<>() {
@@ -423,7 +364,9 @@
                             }
                         };
                     }
-                    
+
+
+                    //Metodo utilizado para devolver una vista de la lista entre los nodos ingresados
                     public ListaCircular sublist (ListNode from, ListNode to){
                         if (!isEmpty()){
                             ListaCircular sublist = new ListaCircular();
@@ -475,309 +418,6 @@
     </section>
     <br>
     <br>
-
-    <section class="texto">
-
-        <h3>Listas Circulares Dobles</h3>
-        <p><b>ListNode</b></p>
-
-        <pre class="prettyprint">
-            <code id="language-java">
-
-                public class ListNode {
-                    public Object objeto;
-                    public ListNode siguiente;
-                    public ListNode anterior;
-                    
-                    public ListNode() {
-                        this.objeto = null;
-                        this.siguiente = null;
-                        this.anterior = null;
-                    }
-                    public ListNode(Object objeto) {
-                        this.objeto = objeto;
-                        this.siguiente = null;
-                        this.anterior = null;
-                    }
-                    
-                    public ListNode(Object objeto, ListNode siguiente, ListNode anterior) {
-                        this.objeto = objeto;
-                        this.siguiente = siguiente;
-                        this.anterior = anterior;
-                    }
-                    
-                    public Object getObject() {
-                        return objeto;
-                    }
-                    
-                    public void setObject(Object objeto) {
-                        this.objeto = objeto;
-                    }
-                    
-                    public boolean isEquals(Object objeto) {
-                        if (this.getObject().toString().equals(objeto.toString())) {
-                            return true;
-                        }
-                        return false;
-                    }
-                    
-                    public boolean isEquals(ListNode node) {
-                        if (this.toString().equals(node.toString())) {
-                            return true;
-                        }
-                        return false;
-                    }
-                    
-                    @Override
-                    public String toString() {
-                        return "ListNode{" +
-                                "objeto=" + objeto +
-                                ", anterior=" + anterior +
-                                ", siguiente=" + siguiente +
-                                '}';
-                    }
-                }
-            </code>
-        </pre>
-
-    </section>
-
-    <section class="texto">
-
-
-        <p><b>Lista Circular Doble</b></p>
-
-        <pre class="prettyprint">
-            <code id="language-java">
-
-                import java.util.Arrays;
-                import static java.lang.System.*;
-                /**
-                 *
-                 * @author Daniel
-                 */
-                public class ListaDobleCircular {
-                    
-                    private int size;
-                    public ListNode head;
-                    public ListNode tail;
-                    
-                    public ListaDobleCircular(){
-                        clear();
-                    }
-                    
-                    public ListaDobleCircular(Object object) {
-                        add(object);
-                    }
-                    //Funciona
-                    public boolean add(Object object) {
-                        return insertTail(object);
-                    }
-                    //Funciona
-                    public boolean insertHead(Object object) {
-                            if (isEmpty()) {
-                                head = new ListNode(object);
-                                tail = head;
-                            } else {
-                                head = new ListNode(object,head,tail);
-                                head.siguiente.anterior = head;
-                                head.anterior = tail;
-                            }
-                            this.size++;
-                            return true;
-                    }
-                    //Funciona
-                    public boolean insertTail(Object object) {
-                            if (isEmpty()) {
-                                head = new ListNode(object);
-                                tail = head;
-                            }else {
-                                tail = new ListNode(object,head,tail);
-                                tail.anterior.siguiente = tail;
-                            }
-                            size++;
-                            return true;
-                    }
-                    //Funciona
-                    public boolean insert(ListNode node, Object object){
-                        try{
-                            if (node.siguiente==head){
-                                insertTail(object);
-                            }else{
-                                if (node.anterior == tail){
-                                    insertHead(object);
-                                }else{
-                                    ListNode nuevoNodo = new ListNode(object);
-                                    nuevoNodo.siguiente = node.siguiente;
-                                    node.siguiente.anterior = nuevoNodo;
-                                    node.siguiente = nuevoNodo;
-                                    nuevoNodo.anterior = node;
-                                    size++;
-                                }
-                                
-                            }
-                            return true;
-                        } catch(Exception e){
-                            return false;
-                        }
-                    }
-                    //Funciona
-                    public boolean insert(Object ob, Object object){
-                        try{
-                        if (ob != null){
-                            ListNode node = search(ob);
-                            if (node!=null){
-                                return insert(node,object);
-                            }else{
-                                return false;
-                            }
-                        }else{
-                            return false;
-                        }
-                        }catch (Exception e){
-                            return false;
-                        }
-                    }
-                    
-                    //Funciona
-                    public boolean isEmpty() {
-                        return head == null;
-                    }
-                    //Funciona
-                    public void clear() {
-                        head = null;
-                        tail = null;
-                        size = 0;
-                    }
-                    //Funciona
-                    public int getSize() {
-                        return size;
-                    }
-                    //Funciona
-                    public Object getHead() {
-                        return head.objeto;
-                    }
-                    //Funciona
-                    public Object getTail() {
-                        return tail.objeto;
-                    }
-                    //Funciona
-                    public boolean remove(ListNode node){
-                        if (head != null){
-                            if (head.siguiente == head){
-                                clear();
-                            }else{
-                                ListNode aux = head;
-                                while (aux.siguiente != node){
-                                    aux = aux.siguiente;
-                                }
-                                aux.siguiente = node.siguiente;
-                                node.siguiente.anterior = aux;
-                                node.siguiente = null;
-                                node.anterior = null;
-                            }
-                        }
-                        size--;
-                        return true;
-                    }
-                    //Funciona
-                    public boolean remove(Object objeto){
-                        if (head!= null){
-                            if (head.siguiente == head){
-                                clear();
-                            }else{
-                                ListNode aux = head;
-                                ListNode node = search(objeto);
-                                while (aux.siguiente != node){
-                                    aux = aux.siguiente;
-                                }
-                                aux.siguiente = node.siguiente;
-                                node.siguiente.anterior = aux;
-                                node.siguiente = null;
-                                node.anterior = null;
-                            }
-                        }
-                        size--;
-                        return true;
-                    }
-                    //Funciona
-                    public ListNode search(Object object){
-                        ListNode ite = head;
-                        while(ite!=null && ite.objeto!=object && ite.siguiente != head){
-                            ite = ite.siguiente;
-                        }
-                        if (ite.objeto == object){
-                            return ite;
-                        }else{
-                            return null;
-                        }
-                    }
-                    //Funciona
-                    public boolean contains(Object object){
-                        if (isEmpty()){
-                            return false;
-                        }else{
-                            ListNode node = search(object);
-                            if (node != null && node.objeto != null){
-                                return true;
-                            }else{
-                                return false;
-                            }
-                        }
-                    }
-                    //Funciona
-                    public Object getBeforeTo(ListNode node){
-                        ListNode before = node.anterior;
-                        return before.objeto;
-                    }
-                    //Funciona
-                    public Object getNextTo(ListNode node){
-                        ListNode next = node.siguiente;
-                        return next.objeto;
-                    }
-                    //Funciona
-                    public ListaDobleCircular subList(ListNode from, ListNode to){
-                        ListaDobleCircular sublist = new ListaDobleCircular();
-                        ListNode ite = from;
-                        while(ite != to.siguiente){
-                            sublist.add(ite.objeto);
-                            ite = ite.siguiente;
-                        }
-                        return sublist;
-                    }
-                    //Funciona
-                    public Object[] toArray(){
-                        Object[] objetos = new Object[size];
-                        ListNode ite = head;
-                        int cont = 0;
-                        while (ite.siguiente != head){
-                            objetos[cont]=ite.objeto;
-                            ite = ite.siguiente;
-                            cont++;
-                        }
-                        objetos[cont]=ite.objeto;
-                
-                        return objetos;
-                    }
-                    
-                    @Override
-                    public String toString(){
-                        String lista="";
-                        ListNode ite = head;
-                        while(ite.siguiente != head){
-                            lista += " ListNode{objeto="+ite.objeto+"},siguiente=";
-                            ite = ite.siguiente;
-                        }
-                        lista += " ListNode{objeto="+tail.objeto+'}';
-                        return lista;
-                    }
-                }
-            </code>
-        </pre>
-
-    </section>
-
-
 
 
 </body>

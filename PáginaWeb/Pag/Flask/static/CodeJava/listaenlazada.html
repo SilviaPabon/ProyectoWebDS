@@ -25,26 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">LVaED</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="presentacion.html">Presentacion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Transformaciones</a>
-                        </li>
 
-                    </ul>
-                </div>
             </div>
         </nav>
 
@@ -55,7 +36,7 @@
             <p>
                 Web para mejorar tu programacion
             </p>
-            <button class="btn btn-secondary " onclick="window.location.href='../Ejemplos.html'">Empieza tu aprendizaje
+            <button class="btn btn-secondary " onclick="window.location.href='/Ejemplos.html'">Volver a Mod Ejemplos
             </button>
         </div>
 
@@ -141,69 +122,6 @@
 
     </section>
 
-    <section class="texto">
-
-
-        <p><b>Clase List Node</b></p>
-
-        <pre class="prettyprint">
-            <code id="language-java">
-
-                public class ListNode {
-    
-                    private Object object;
-                    public ListNode next;
-                
-                    public ListNode() {
-                        this.object = null;
-                        this.next = null;
-                    }
-                
-                    public ListNode(Object object) {
-                        this.object = object;
-                        this.next = null;
-                    }
-                
-                    public ListNode(Object object, ListNode next) {
-                        this.object = object;
-                        this.next = next;
-                    }
-                
-                    public Object getObject() {
-                        return object;
-                    }
-                
-                    public void setObject(Object object) {
-                        this.object = object;
-                    }
-                
-                    public boolean isEquals(Object object) {
-                        if (this.getObject().toString().equals(object.toString())) {
-                            return true;
-                        }
-                        return false;
-                    }
-                
-                    public boolean isEquals(ListNode node) {
-                        if (this.toString().equals(node.toString())) {
-                            return true;
-                        }
-                        return false;
-                    }
-                
-                    @Override
-                    public String toString() {
-                        return "ListNode{" +
-                                "object=" + object +
-                                ", next=" + next +
-                                '}';
-                    }
-                }
-            </code>
-        </pre>
-
-    </section>
-
 
     <section class="texto">
         <p><b>Clase List</b></p>
@@ -230,32 +148,24 @@
                         clear();
                     }
 
-                    /*
-                    ok
-                    */
+                    
                     public List(Object object) {
                         add(object);
                     }
 
-                    /*
-                    ok
-                    */
+                    /* Metodo "es vacio" la lista se vuelve vacia por la cabeza, no contiene ningun elemento*/
                     @Override
                     public boolean isEmpty() {
                         return head == null;
                     }
 
-                    /*
-                    ok
-                    */
+                    
                     @Override
                     public int getSize() {
                         return size;
                     }
 
-                    /*
-                    ok
-                    */
+                    /* Metodo para limpiar la lista por completo, su tamñano es 0*/
                     @Override
                     public void clear() {
                         head = null;
@@ -263,25 +173,19 @@
                         size = 0;
                     }
 
-                    /*
-                    ok
-                    */
+                    /* Retorna el elemento que esta en la cabeza */
                     @Override
                     public Object getHead() {
                         return head;
                     }
 
-                    /*
-                    ok
-                    */
+                    /* Retorna el valor de la cola que esta en la lista */
                     @Override
                     public Object getTail() {
                         return tail;
                     }
 
-                    /*
-                    ok
-                    */
+                    /* Metodo buscar, para buscar dentro de la lista el elemento que desee */
                     @Override
                     public ListNode search(Object object) {
                         Iterator<ListNode> i = this.iterator();
@@ -294,18 +198,14 @@
                         return null;
                     }
 
-                    /*
-                    ok
-                    */
+                    /* Metodo para mostrar un dato, elemento, que esta en la cabeza */
                     @Override
                     public boolean add(Object object) {
                         return insertHead(object);
                     }
 
-                    /*
-                    ok
-                    */
-                        @Override
+                    /* insertar elemento en cualquier posicion*/ 
+                    @Override
                     public boolean insert(Object ob, Object object) {
                         try {
                             if (ob != null) {
@@ -322,9 +222,8 @@
                             return false;
                         }
                     }
-                    /*
-                    ok
-                    */
+                    
+                    
                     @Override
                     public boolean insert(ListNode node, Object object) {
                         try {
@@ -340,9 +239,8 @@
                             return false;
                         }
                     }
-                    /*
-                    ok
-                    */
+                    
+                    /* Insertar elemento por la cabeza */
                     @Override
                     public boolean insertHead(Object object) {
                         try {
@@ -360,7 +258,7 @@
                     }
 
                     /*
-                    ok
+                    Insertar elemento por cola 
                     */
                     @Override
                     public boolean insertTail(Object object) {
@@ -381,7 +279,7 @@
                     }
 
                     /*
-                    ok
+                    Eliminar nodo
                     */
                     @Override
                     public boolean remove(ListNode node) {
@@ -403,7 +301,7 @@
                     }
 
                     /*
-                    ok
+                    Elimiar elemento ingresado
                     */
                     @Override
                     public boolean remove(Object object) {
@@ -427,6 +325,7 @@
                         return false;
                     }
 
+                    /* comprobar si el elemento tiene otra subcadena o no*/
                     @Override
                     public boolean contains(Object object) {
                         if (isEmpty()){
@@ -441,6 +340,7 @@
                         }
                     }
 
+                    //se utiliza para devolver una matriz que contiene todos los elementos
                     @Override
                     public Object[] toArray(Object[] object) {
                         object = new Object[this.size];
@@ -452,7 +352,7 @@
                         return new Object[this.size];
                     }
                     
-                    
+                    //se utiliza para devolver una matriz que contiene todos los elementos en el orden correcto
                     @Override
                     public Object[] toArray(){
                         Object[] object;
@@ -465,9 +365,8 @@
                         }
                         return object;
                     }
-                    /*
-                    ok
-                    */
+                    
+                    //Metodo para retornar el elemento antes de x nodo que esta en la lista
                     @Override
                     public ListNode getBeforeTo(ListNode node) {
                         ListNode beforenode = head;
@@ -485,6 +384,7 @@
                         return beforenode;
                     }
 
+                    //Metodo para retornar el elemento despues de x nodo que esta en la lista
                     @Override
                     public Object getNextTo(ListNode node) {
                         Object ob = node.getObject();
@@ -499,6 +399,7 @@
                         return inode;
                     }
 
+                    //Metodo utilizado para devolver una vista de la lista entre los nodos ingresados
                     @Override
                     public List subList(ListNode from, ListNode to) {
                         if (!isEmpty()){
@@ -516,6 +417,7 @@
                         }
                     }
 
+                    //Metodo utilizado para ordenar los elementos presentes en la lista en orden ascendente.
                     @Override
                     public List sortList() {
                         List sortList = new List();
@@ -529,6 +431,7 @@
                         return sortList;
                     }
 
+                    //Metodo para recorrer la lista y presentar sus elementos.
                     @Override
                     public Iterator<ListNode> iterator() {
                         inode = head;

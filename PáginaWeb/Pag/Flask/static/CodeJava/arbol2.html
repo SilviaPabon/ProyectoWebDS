@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--ayuda a los navegadores para saber que version es -->
+<html lang="en">
+
+<head>
+    <!--No se van a ver en la pagina web-->
+    <title> Programa'Study</title>
+    <meta charset="utf-8">
+    <!--para que permita la ñ y los asentos-->
+    <meta name="viewport" content "width=device-width, initial-scale=1">
+    <!--para redimensionar la web en movil-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="styleA.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&skin=doxy" defer="defer"></script>
+</head>
+
+<body>
+    <header>
+        <!--estructura de la web-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">LVaED</a>
+
+            </div>
+        </nav>
+
+        <div class="cover d-flex justify-content-center align-items-center flex-column ">
+            <h1>
+                ARBOLES JAVA
+            </h1>
+            <p>
+                Web para mejorar tu programacion
+            </p>
+            <button class="btn btn-secondary " onclick="window.location.href='/Ejemplos.html'">Volver a Mod Ejemplos
+            </button>
+        </div>
+
+    </header>
+
+    <div class="texto">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination" ALIGN=CENTER>
+
+                <li class="page-item"><a class="page-link" href="arbolJava.html">1</a></li>
+                <li class="page-item"><a class="page-link" href="arbol2.html">2</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+
+    <section class="texto">
+        <h3>Arbol Binario</h3>
+        <p><b>Clase Node</b></p>
+
+        <pre class="prettyprint">
+            <code id="language-java">
+
+                public class Node {
+                    public Node izquierda;
+                    public Node derecha;
+                    public int objeto;
+                    
+                    public Node(int object){
+                        this.izquierda = null;
+                        this.derecha = null;
+                        this.objeto = object;
+                    }
+                    
+                    public Node (Node left, int object, Node right){
+                        this.izquierda = left;
+                        this.derecha = right;
+                        this.objeto = object;
+                    }
+                    
+                    @Override
+                    public String toString(){
+                        return "Node{" +
+                                "left="+izquierda+
+                                ", right="+derecha+
+                                ", object="+objeto+
+                                '}';
+                    }
+                }
+            </code>
+        </pre>
+    </section>
+    <section class="texto">
+
+        <p><b>Clase BinTree</b></p>
+
+        <pre class="prettyprint">
+            <code id="language-java">
+
+                public class BinTree {
+                    public Node root;
+                    
+                    public BinTree(){
+                        this.root = null;
+                    }
+                    
+                    //Devuelve un valor de tipo booleano que indica si se ha inicializado una variable. El argumento expresión puede ser cualquier expresión.
+                    public boolean isEmpty(){
+                        return root == null;
+                    }
+                    
+                    //es cuándo se recorre la raíz. En los tres, se recorre primero el sub-árbol izquierdo y luego el derecho. Preorden (antes).
+                    public String preOrder(Node root){
+                        String obj = "";
+                        if (root!=null){
+                            System.out.print(root.objeto+"-");
+                            preOrder(root.izquierda);
+                            preOrder(root.derecha);
+                        }
+                        return obj;
+                    }
+                    
+                    //es cuándo se recorre la raíz. En los tres, se recorre primero el sub-árbol izquierdo y luego el derecho. inOrden(en la mitad).
+                    public String inOrder(Node root){
+                        String obj = "";
+                        if (root!=null){
+                            inOrder(root.izquierda);
+                            System.out.print(root.objeto+"-");
+                            inOrder(root.derecha);
+                        }
+                        return obj;
+                    }
+                    
+                    //es cuándo se recorre la raíz. En los tres, se recorre primero el sub-árbol izquierdo y luego el derecho. posOrden (Despues).
+                    public String posOrder(Node root){
+                        String obj = "";
+                        if (root!=null){
+                            posOrder(root.izquierda);
+                            posOrder(root.derecha);
+                            System.out.print(root.objeto +"-");
+                        }
+                        return obj;
+                    }
+                    
+                    //Insertar un nuevo elemento al arbol.
+                    public void insert(int obj){
+                        Node nuevo= new Node(obj);
+                        if(root == null){
+                            root = nuevo;
+                        }else{
+                            Node aux = root;
+                            Node padre;
+                            while(true){
+                                padre = aux;
+                                if (obj < aux.objeto){
+                                    aux = aux.izquierda;
+                                    if (aux == null){
+                                        padre.izquierda=nuevo;
+                                        return;
+                                    }
+                                }else{
+                                    aux = aux.derecha;
+                                    if (aux == null){
+                                        padre.derecha=nuevo;
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    //Metodo para hacer la busqueda del nodo y elemento ingresado en el arbol.
+                    public boolean search(int obj){
+                        Node aux = root;
+                        while(aux.objeto!=obj){
+                            if (obj < aux.objeto){
+                                aux = aux.izquierda;
+                            }else{
+                                aux = aux.derecha;
+                            }
+                            if (aux == null){
+                                return false;
+                            }
+                        }
+                        return true;
+                    }
+                
+                    //Elimina el elemento en el arbol.
+                    public boolean remove(int obj){
+                        Node aux = root;
+                        Node padre = root;
+                        boolean izq = true;
+                        while(aux.objeto != obj){
+                            padre = aux;
+                            if (obj < aux.objeto){
+                                izq = true;
+                                aux = aux.izquierda;
+                            }else{
+                                izq = false;
+                                aux = aux.derecha;
+                            }
+                            if ( aux == null){
+                                return false;
+                            }
+                        }
+                        if (aux.izquierda == null && aux.derecha == null){ //Nodo hoja
+                            if (aux == root){
+                                root = null;
+                            }else if (izq){
+                                padre.izquierda = null;
+                            }else{
+                                padre.derecha = null;
+                            }
+                        }else if(aux.derecha==null){
+                            if (aux == root){
+                                root = aux.izquierda;
+                            }else if (izq){
+                                padre.izquierda = aux.izquierda;
+                            }else{
+                                padre.derecha = aux.izquierda;
+                            }
+                        }else if(aux.izquierda == null){
+                            if (aux == root){
+                                root = aux.derecha;
+                            }else if (izq){
+                                padre.izquierda = aux.derecha;
+                            }else{
+                                padre.derecha = aux.derecha;
+                            }
+                        }else{
+                            Node reemplazo = obtenerNodoReemplazo(aux);
+                            if(aux == root){
+                                root = reemplazo;
+                            }else if(izq){
+                                padre.izquierda=reemplazo;
+                            }else{
+                                padre.derecha = reemplazo;
+                            }
+                            reemplazo.izquierda = aux.izquierda;
+                        }
+                    return true;
+                    }
+
+                    //Obtiene el noto reemplazado.
+                    public Node obtenerNodoReemplazo(Node NodoR){
+                        
+                        Node reemplazopadre = NodoR;
+                        Node reemplazo = NodoR;
+                        Node aux = NodoR.derecha;
+                        while(aux != null){
+                            reemplazopadre = reemplazo;
+                            reemplazo = aux;
+                            aux = aux.izquierda;
+                        }
+                        if (reemplazo != NodoR.derecha){
+                            reemplazopadre.izquierda = reemplazo.derecha;
+                            reemplazo.derecha = NodoR.derecha;
+                        }
+                        return reemplazo;
+                    }
+            </code>
+        </pre>
+    </section>
+    <br>
+
+</body>

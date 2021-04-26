@@ -1,3 +1,17 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+</style>
+
+header {
+    margin: 0cm;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+font {
+    margin: 0cm;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
 body {
     margin: 0cm;
     font-family: 'Noto Sans', sans-serif;
@@ -73,6 +87,15 @@ h6 {
     height: 100%;
 }
 
-table, th, td {
-  border: 1px solid black;
+.texto {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
 }

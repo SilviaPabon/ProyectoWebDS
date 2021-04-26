@@ -25,26 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">LVaED</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="presentacion.html">Presentacion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Transformaciones</a>
-                        </li>
 
-                    </ul>
-                </div>
             </div>
         </nav>
 
@@ -55,7 +36,7 @@
             <p>
                 Web para mejorar tu programacion
             </p>
-            <button class="btn btn-secondary " onclick="window.location.href='../Ejemplos.html'">Empieza tu aprendizaje
+            <button class="btn btn-secondary " onclick="window.location.href='/Ejemplos.html'">Volver a Mod Ejemplos
             </button>
         </div>
 
@@ -101,15 +82,18 @@
                         this.siguiente = siguiente;
                         this.anterior = anterior;
                     }
-                    
+
+                    //Obtiene el valor del nombre de la columna designada en la fila actual de este objeto.
                     public Object getObject() {
                         return objeto;
                     }
                     
+                    //Establece el valor del parámetro designado mediante el objeto y el tipo de destino dados.
                     public void setObject(Object objeto) {
                         this.objeto = objeto;
                     }
                     
+                    //compara dos cadenas y devuelve verdadero si las cadenas son iguales y falso si no.
                     public boolean isEquals(Object objeto) {
                         if (this.getObject().toString().equals(objeto.toString())) {
                             return true;
@@ -117,6 +101,7 @@
                         return false;
                     }
                     
+                    //compara dos cadenas (nodo) y devuelve verdadero si las cadenas son iguales y falso si no.
                     public boolean isEquals(ListNode node) {
                         if (this.toString().equals(node.toString())) {
                             return true;
@@ -153,94 +138,100 @@
                         clear();
                     }
             
-                @Override
-                public void clear() {
-                    
-                    head=null;
-                    tail=null;
-                    size=0;
-                    
-                    
-                }
-            
-                @Override
-                public boolean isEmpty() {
-                    
-                    return head == null;
-                    
-                }
-            
-                @Override
-                public Object extract() {
-                    ListNode primero = head;
-                    head = primero.siguiente;
-                    head.anterior = null;
-                    return primero.objeto;
-                }
-            
-                @Override
-                public boolean insert(Object object) {
-                    if (isEmpty()) {
-                            head = new ListNode(object);
-                            tail = head;
-                        }else {
-                            tail = new ListNode(object,null,tail);
-                            tail.anterior.siguiente = tail;
-                        }
-                        size++;
-                        return true;
-                }
-            
-                @Override
-                public int size() {
-                    
-                    return size;
-                    
-                }
-            
-                @Override
-                public boolean search(Object object) {
-                    try {
-                    ListNode ite = head;
-                    while(ite!=null && ite.objeto !=object){
-                        ite = ite.siguiente;
-                    }
-                    if (ite.objeto == object){
-                        return true;
-                    }
-                    else{
-                        return false;
-                    }    
-                    } catch (Exception e) {
-                        return false;
-                    }
-                }
-            
-                @Override
-                public void sort() {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-            
-                @Override
-                public void reverse() {
-                    ListNode temp = tail;
-                    tail = head;
-                    head = temp;
-                }
-                
-            
-                @Override
-                public String toString(){
-                    String lista="ListQueue= ";
-                    ListNode ite = head;
-                    while(ite != null){
-                        lista += "Object "+ite.objeto +" ";
-                        ite = ite.siguiente;
-                    }
-                    return lista;
-                }   
 
-              }
+                    //Metodo que limpia la Cola en totalidad
+                    @Override
+                    public void clear() {
+                        
+                        head=null;
+                        tail=null;
+                        size=0;
+                    }
+                
+                    //Metodo para verificar si la cabeza de la cola es 0
+                    @Override
+                    public boolean isEmpty() {
+                        
+                        return head == null;
+                        
+                    }
+                
+                    @Override
+                    public Object extract() {
+                        ListNode primero = head;
+                        head = primero.siguiente;
+                        head.anterior = null;
+                        return primero.objeto;
+                    }
+                
+                    //Metodo para insertar a la cola el elemento que ingrese el usuario.
+                    @Override
+                    public boolean insert(Object object) {
+                        if (isEmpty()) {
+                                head = new ListNode(object);
+                                tail = head;
+                            }else {
+                                tail = new ListNode(object,null,tail);
+                                tail.anterior.siguiente = tail;
+                            }
+                            size++;
+                            return true;
+                    }
+                
+                    //Metodo que retorna la talla de la cola
+                    @Override
+                    public int size() {
+                        
+                        return size;
+                        
+                    }
+                
+                    //Funciona para buscar el elemento que se desee.
+                    @Override
+                    public boolean search(Object object) {
+                        try {
+                        ListNode ite = head;
+                        while(ite!=null && ite.objeto !=object){
+                            ite = ite.siguiente;
+                        }
+                        if (ite.objeto == object){
+                            return true;
+                        }
+                        else{
+                            return false;
+                        }    
+                        } catch (Exception e) {
+                            return false;
+                        }
+                    }
+                
+                    @Override
+                    public void sort() {
+                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                    }
+                
+                    //Metodo utilizado para invertir la cadena, es decir la cola pasa a ser la cabeza y viceversa.
+                    @Override
+                    public void reverse() {
+                        ListNode temp = tail;
+                        tail = head;
+                        head = temp;
+                    }
+                    
+                
+                    //Funciona para convertir la cadena en string
+                    @Override
+                    public String toString(){
+                        String lista="ListQueue= ";
+                        ListNode ite = head;
+                        while(ite != null){
+                            lista += "Object "+ite.objeto +" ";
+                            ite = ite.siguiente;
+                        }
+                        return lista;
+                    }
+                }   
+              
             
             </code>
         </pre>

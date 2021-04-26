@@ -1,8 +1,0 @@
-    def insertar():
-        pass
-    def remove():
-        pass
-class claselista:
-    def __init__(self):
-        self.objeto = 
-        self.nodo = 

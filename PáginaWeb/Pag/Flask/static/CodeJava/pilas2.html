@@ -25,26 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">LVaED</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="presentacion.html">Presentacion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Transformaciones</a>
-                        </li>
 
-                    </ul>
-                </div>
             </div>
         </nav>
 
@@ -55,7 +36,7 @@
             <p>
                 Web para mejorar tu programacion
             </p>
-            <button class="btn btn-secondary " onclick="window.location.href='../Ejemplos.html'">Empieza tu aprendizaje
+            <button class="btn btn-secondary " onclick="window.location.href='/Ejemplos.html'">Volver a Mod Ejemplos
             </button>
         </div>
 
@@ -95,102 +76,117 @@
                         public ListStack(){
                             clear();
                         }
-                    @Override
-                        public void clear() {
-                        head = null;
-                        tail = null;
-                        top = null;
-                        size = 0;
-                        }
-                    @Override
-                        public boolean isEmpty() {
-                        return tail == null;
-                    }
-                    @Override
-                        public Object peek() {
-                        return tail;
-                    }
-                    @Override
-                        public Object pop(){
-                            Object pop = peek();
-                            remove();
-                            return pop;
-                        }
-                    @Override
-                        public boolean push(Object object) {
-                        return insertTail(object);
-                    }
-                        
-                        public boolean insertTail(Object object) {
-                        try {
-                            if (isEmpty()) {
-                                head = new ListNode(object);
-                                tail = head;
-                            } 
-                            else {
-                                tail.next = new ListNode(object);
-                                tail = tail.next;
-                                top = tail;
+
+                            //Limpia la pila.
+                            @Override
+                                public void clear() {
+                                head = null;
+                                tail = null;
+                                top = null;
+                                size = 0;
+                                }
+                            
+                            //Devuelve un valor de tipo booleano que indica si se ha inicializado una variable.
+                            @Override
+                                public boolean isEmpty() {
+                                return tail == null;
                             }
-                            size++;
-                            return true;
-                        } catch (Exception e) {
-                            return false;
-                        }
-                    }
-                        
-                        public boolean remove() {
-                        if (head != null){
-                            if (head.next == null){
-                                clear();
-                            } 
-                            else
-                            {
-                                ListNode temp = tail;
-                                tail.next = null;
-                                tail = temp;
+
+                            //se usa para recuperar o buscar el primer elemento de la Pila o el elemento presente en la parte superior de la Pila.
+                            @Override
+                                public Object peek() {
+                                return tail;
                             }
-                        }
-                        size--;
-                        return true;
-                    }
-                
-                    @Override
-                    public int size() {
-                        return size;
-                    }
-                
-                    @Override
-                    public boolean search(Object object) {
-                        ListNode ite = top;
-                        while(ite!=null && ite.object !=object){
-                            ite = ite.next;
-                        }
-                        if (ite.object == object){
-                            return true;
-                        }
-                        else{
-                            return false;
-                        }
-                    }
-                
-                    @Override 
-                    public void sort() {
-                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                    }
-                
-                    public void reverse(ListStack normal) {
-                        ListStack reverse = new ListStack();
-                        while (normal.size > 0){
-                            reverse.push(normal.pop());
-                        }
-                        normal = reverse;
-                    }
-                
-                    @Override
-                    public void reverse() {
-                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                    }
+
+                            //saca un elemento de la pila.
+                            @Override
+                                public Object pop(){
+                                    Object pop = peek();
+                                    remove();
+                                    return pop;
+                                }
+
+                            //Metodo el cual introduce un elemento en la pila.
+                            @Override
+                                public boolean push(Object object) {
+                                return insertTail(object);
+                            }
+                                
+                                //Insertar un elemento por la parte mas abajo de la pila (cola).
+                                public boolean insertTail(Object object) {
+                                try {
+                                    if (isEmpty()) {
+                                        head = new ListNode(object);
+                                        tail = head;
+                                    } 
+                                    else {
+                                        tail.next = new ListNode(object);
+                                        tail = tail.next;
+                                        top = tail;
+                                    }
+                                    size++;
+                                    return true;
+                                } catch (Exception e) {
+                                    return false;
+                                }
+                            }
+                                //retirar dicho elemento de la pila.
+                                public boolean remove() {
+                                if (head != null){
+                                    if (head.next == null){
+                                        clear();
+                                    } 
+                                    else
+                                    {
+                                        ListNode temp = tail;
+                                        tail.next = null;
+                                        tail = temp;
+                                    }
+                                }
+                                size--;
+                                return true;
+                            }
+                        
+                            //Retorna el tamaño de la pila.
+                            @Override
+                            public int size() {
+                                return size;
+                            }
+                        
+                            //Buscar en la pila el objeto indicado.
+                            @Override
+                            public boolean search(Object object) {
+                                ListNode ite = top;
+                                while(ite!=null && ite.object !=object){
+                                    ite = ite.next;
+                                }
+                                if (ite.object == object){
+                                    return true;
+                                }
+                                else{
+                                    return false;
+                                }
+                            }
+                        
+                            //Metodo para ordenar la pila.
+                            @Override 
+                            public void sort() {
+                                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                            }
+                        
+                            public void reverse(ListStack normal) {
+                                ListStack reverse = new ListStack();
+                                while (normal.size > 0){
+                                    reverse.push(normal.pop());
+                                }
+                                normal = reverse;
+                            }
+                        
+                            //Metodo para invertir de orden la Pila.
+                            @Override
+                            public void reverse() {
+                                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                            }
                 
                 }
             </code>

@@ -25,26 +25,8 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">LVaED</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="presentacion.html">Presentacion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Transformaciones</a>
-                        </li>
 
-                    </ul>
-                </div>
+            </div>
             </div>
         </nav>
 
@@ -57,7 +39,7 @@
             <p>
                 Web para mejorar tu programacion
             </p>
-            <button class="btn btn-secondary " onclick="window.location.href='../Ejemplos.html'">Empieza tu aprendizaje
+            <button class="btn btn-secondary " onclick="window.location.href='/Ejemplos.html'">Volver a Mod Ejemplos
             </button>
         </div>
 
@@ -94,6 +76,7 @@
                     private:
                         Nodo* inicio;
                     public:
+                    //Métodos que se van a utilizar
                         ListaCircularDoble();
                         bool isEmpty();
                         int getSize();
@@ -109,6 +92,7 @@
                     };
                 
                 bool ListaCircularDoble::isEmpty(){
+                    //Método para comprobar si está vacío
                     if (inicio == NULL){
                         return true;
                     }else{
@@ -117,6 +101,7 @@
                 }
                 
                 int ListaCircularDoble::getSize(){
+                    //Método para obtener el tamaño de la lista
                         Nodo* ite = inicio;
                         int size;
                         size = 1;
@@ -128,6 +113,7 @@
                     }
                 
                 void ListaCircularDoble::clear(){
+                    //Método para vaciar la lista
                         Nodo* ite;;
                         if (inicio != NULL){
                             ite = inicio;
@@ -143,16 +129,19 @@
                     }
                 
                 Dato ListaCircularDoble::getHead(){
+                    //Método para obtener la cabeza
                         return inicio -> getObject();
                     }
                     
                 Dato ListaCircularDoble::getTail(){
+                    //Método para obtener la cola
                         Nodo* tail;
                         tail = cola();
                         return tail -> getObject();
                     }
                 
                 Nodo* ListaCircularDoble::search(Dato object){
+                    //Método para buscar un dato
                         Nodo* iterador;
                         for (iterador = inicio->siguiente(); iterador != inicio; iterador = iterador->siguiente())
                             if (object == iterador ->getObject())
@@ -161,6 +150,7 @@
                     }
                 
                 void ListaCircularDoble::insert(Dato object){
+                    //Método para insertar un dato
                     Nodo* nuevo;
                     nuevo = new Nodo(object);
                     if (inicio != NULL){
@@ -172,6 +162,7 @@
                 }
                 
                 void ListaCircularDoble::remove(Dato object){
+                    //Método para eliminar un dato
                     Nodo* ite;
                     bool encontrado = false;
                     ite = inicio;
@@ -199,6 +190,7 @@
                 }
                 
                 bool ListaCircularDoble::contains(Dato object){
+                    //Método para comprobar si el dato se encuentra en la lista
                         Nodo* iterador;
                         for (iterador = inicio -> siguiente(); iterador != inicio; iterador = iterador->siguiente())
                             if (object == iterador ->getObject())
@@ -208,6 +200,7 @@
                     }
                 
                 void ListaCircularDoble::visualizar(){
+                    //Método para mostrar los datos de la lista
                         Nodo* ite;
                         int i = 0;
                         ite = inicio;
@@ -220,6 +213,7 @@
                     }
                 
                 Nodo* ListaCircularDoble::cola(){
+                    //Método para obtener el dato anterior al dato de inicio
                         Nodo* ite = inicio;
                         if (ite == NULL) throw "Lista vacía";
                         while (ite->siguiente() != inicio) ite = ite->siguiente();
@@ -227,6 +221,7 @@
                     }
                 
                 ListaCircularDoble::ListaCircularDoble(){
+                    //Creación de la lista vacía
                         inicio = NULL;
                     }
             </code>

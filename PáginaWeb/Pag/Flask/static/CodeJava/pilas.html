@@ -25,26 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">LVaED</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="presentacion.html">Presentacion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Ejemplos.html">Ejemplos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Transformaciones</a>
-                        </li>
 
-                    </ul>
-                </div>
             </div>
         </nav>
 
@@ -55,7 +36,7 @@
             <p>
                 Web para mejorar tu programacion
             </p>
-            <button class="btn btn-secondary " onclick="window.location.href='../Ejemplos.html'">Empieza tu aprendizaje
+            <button class="btn btn-secondary " onclick="window.location.href='/Ejemplos.html'">Volver a Mod Ejemplos
             </button>
         </div>
 
@@ -100,14 +81,17 @@
                         this.next = next;
                     }
                 
+                    //Obtiene el valor del nombre de la columna designada en la fila actual de este objeto.
                     public Object getObject() {
                         return object;
                     }
                 
+                    //Establece el valor del parámetro designado mediante el objeto y el tipo de destino dados.
                     public void setObject(Object object) {
                         this.object = object;
                     }
                 
+                    //compara dos cadenas y devuelve verdadero si las cadenas son iguales y falso si no.
                     public boolean isEquals(Object object) {
                         if (this.getObject().toString().equals(object.toString())) {
                             return true;
@@ -115,6 +99,8 @@
                         return false;
                     }
                 
+
+                    //compara dos cadenas (nodo) y devuelve verdadero si las cadenas son iguales y falso si no.
                     public boolean isEquals(ListNode node) {
                         if (this.toString().equals(node.toString())) {
                             return true;
@@ -122,6 +108,7 @@
                         return false;
                     }
                 
+                    //Convertir el elemente en string
                     @Override
                     public String toString() {
                         return "ListNode{" +

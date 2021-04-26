@@ -42,27 +42,88 @@
 
 
     </header>
+    <section>
+        <p>
+                </p>
+    </section>
+            <h6 ALIGN=CENTER>
 
-    <!--enctype=multipart/form-data  -->
-    <form method=post enctype=multipart/form-data>
-            <div>
-              <label for="file">Elige el archivo de código</label>
-              <input type="file" id="file" name="file" multiple >
-            </div>
-            <div>
-              <input type="submit" value="Enviar datos">Hola Mundo</input>
-            </div>
-            </form>
+                Explicación
+            </h6>
 
-    <form method=post enctype=multipart/form-data action="/module3/reverse">
-            <div>
-              <label for="file">Elige el archivo de imagen</label>
-              <input type="file" id="file2" name="file2" multiple >
+    <div>
+                <table class="default" ALIGN="center">
+
+                    <tr>
+                        <th>Notación</th>
+                        <th>Ejemplo1</th>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div align="center"><img src="imagenes/metalenguaje.png" height="280" width="400"></div>
+                        </td>
+                        <td>
+                            <iframe frameborder="0" style="width:400px;height:280px;" src="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1#R7VjLbqMwFP2aLDMCHBK6bF7tYipVikbTzs4CB5wxODJOgH79mGLzMjQzLZqwyCbyPX7ge%2B7R9VEmYBWmDwwegyfqITKxDC%2BdgPXEsuZzW%2FzmQFYAwJkVgM%2BwV0BmBezwG5KgIdET9lDcWMgpJRwfm6BLowi5vIFBxmjSXLanpPnVI%2FSRBuxcSHT0J%2FZ4UKCOtajwR4T9QH3ZnN8VMyFUi2UmcQA9mtQgsJmAFaOUF6MwXSGSc6d4KfZte2bLizEU8b%2FZkBz938uDR39lh9Xd83QPNk%2FnqTzlDMlJJkxwzCGKCHyDHpQ355miQxwpmBfBMgkwR7sjdPOZRNReYAEPiYhMMdzTiK8ooex9H9hul%2FbCELh%2Ba3UFxDhKa5DM4gHREHGWiSVyFhiSUSkpcy7jpFYgCQW12igMSkn45ckVa2IgifsHEoFGIo5ikc5g7BnOYm0sh2HPspvsWddmb6axx1BIz2iU7IG7FnuzK7Nna%2BzpvEXefd4JReQSGMfYbdIl2GDZiwiMb7YKX%2FNQBeu0EWUqSjF%2FUWeI8WttXG3JA7WjtwAxPTEXXe5THDIf8ctiQl6jq%2BvlrJXL7iiXwhgikONz8y3oqqH8wjPFIrNKLVZLLaAlgyJvuaveu9sHLVotr62nghjtoHdJlWl%2FXmXzAVQm1WKMSC3gppYvqgU7VpxGh%2F3jd9%2Bz0Q%2BaRNN9h6mIc183VD%2B%2FNzbW2ikFojXvDs309vPSO1zBS3RyZ2ncBQh64%2BTOaXJ3bep0G8YhJqOkzmrZCPPK1A3gIvoMf9n3C3MhO7%2FxYefvcySlW%2BlxJJ3tfLAnpF90txfjiy%2FGAP7iov7q6iu1eEF%2FZl19NTGOR383xzKE%2Fhb%2FWX%2BfUN8Ie591096H2hNh9fdesbz6jxRs%2FgA%3D"></iframe>
+                        </td>
+
+                    </tr>
+                </table>
             </div>
-            <div>
-              <input type="submit" value="Enviar datos">Hola Mundo</input>
+
+    </section>
+
+<section class="tarjeta" ALIGN="center">
+        <div class="container mt-5 mb-5 mt-2" ALIGN=JUSTIFY>
+            <div class="row justify-content-center ">
+                <div class="col">
+                    <div class="card" style="width: 25rem;">
+                        <div class="card-body">
+                            <!--enctype=multipart/form-data  -->
+                            <p><small>
+                            Para el siguiente apartado, seleccione el archivo en código Python con la clase a la que desea hacer la transformación.
+
+
+                            </small></p>
+                            <form method=post enctype=multipart/form-data >
+                            <div class="col-12 col-md-4">
+                              <label for="file">Elige el archivo de código</label>
+                              <input type="file" id="file" name="file" multiple >
+                            </div>
+                            <div class="col-12 col-md-4">
+                              <input type="submit" value="Enviar código"></input>
+                            </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card" style="width: 25rem;">
+                        <div class="card-body">
+                            <p><small>
+                            Para este apartado, dírijase a draw.io, grafique su modelo (ver: Ejemplo 1), los colores según la codificación hex:#NNNNN, guárdelo en formato .svg y cargue su archivo. Para mayor claridad, visualizar el vìdeo que aparece en la zona inferior.
+                            </small></p>
+                        <form method=post enctype=multipart/form-data action="/module3/reverse">
+                            <div class="col-12 col-md-4">
+                              <label for="file">Elige el archivo de imagen</label>
+                              <input type="file" id="file2" name="file2" multiple >
+                            </div>
+                            <div class="col-12 col-md-4">
+                              <input type="submit" value="Enviar imagen"></input>
+                            </div>
+                        </form>
+
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
-            </form>
+        </div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/xuIILovhjw8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
 </body>
 
